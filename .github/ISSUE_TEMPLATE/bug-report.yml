@@ -18,4 +18,9 @@
 name: Bug report
 title: "[Bug] [Module Name] Bug title "
 description: Problems and issues with code of Autogen4j
-labe
+labels: [ "bug", "Waiting for reply" ]
+body:
+  - type: markdown
+    attributes:
+      value: |
+     

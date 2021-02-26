@@ -27,4 +27,6 @@ body:
 
   - type: checkboxes
     attributes:
-      label: Se
+      label: Search before asking
+      description: >
+        Please make sure to search in the [issues]

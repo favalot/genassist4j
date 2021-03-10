@@ -38,3 +38,6 @@ body:
           required: true
 
   - type: textarea
+    attributes:
+      label: What happened
+      description: Describe what happened

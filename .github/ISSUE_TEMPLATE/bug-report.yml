@@ -40,4 +40,6 @@ body:
   - type: textarea
     attributes:
       label: What happened
-      description: Describe what happened
+      description: Describe what happened.
+      placeholder: >
+        Please provide the context in which the problem occurred and explain what 

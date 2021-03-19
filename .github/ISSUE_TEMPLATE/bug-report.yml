@@ -48,4 +48,6 @@ body:
 
   - type: textarea
     attributes:
-      label: W
+      label: What you expected to happen
+      description: What do you think went wrong?
+      placeholde

@@ -59,4 +59,5 @@ body:
     attributes:
       label: How to reproduce
       description: >
-        What should we do to reproduce the problem? If
+        What should we do to reproduce the problem? If you are not able to provide a reproducible case,
+        please open a [Discussion](h

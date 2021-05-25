@@ -16,4 +16,5 @@
 #
 name: Feature request
 description: Suggest an idea for this project
-title: "[Fea
+title: "[Feature][Module Name] Feature title"
+labels: [ "new feature", "Waiting for reply" ]

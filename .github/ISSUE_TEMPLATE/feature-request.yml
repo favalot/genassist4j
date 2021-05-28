@@ -22,4 +22,8 @@ body:
   - type: markdown
     attributes:
       value: |
-        For better global communica
+        For better global communication, Please write in English.
+
+  - type: checkboxes
+    attributes:
+      label: Search before asking

@@ -29,4 +29,7 @@ body:
       label: Search before asking
       description: >
         Please make sure to search in the [issues](https://github.com/HamaWhiteGG/autogen4j/issues?q=is%3Aissue) first
-        to see whether the same feature was
+        to see whether the same feature was requested already.
+      options:
+        - label: >
+            I 

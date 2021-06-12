@@ -44,4 +44,6 @@ body:
   - type: textarea
     attributes:
       label: Use case
-      description: What do you wa
+      description: What do you want to happen?
+      placeholder: >
+        Rather than telling us how you might implement this

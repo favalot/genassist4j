@@ -36,4 +36,9 @@ body:
             similar feature requirement.
           required: true
 
-  - type: 
+  - type: textarea
+    attributes:
+      label: Description
+      description: A short description of your feature
+
+ 

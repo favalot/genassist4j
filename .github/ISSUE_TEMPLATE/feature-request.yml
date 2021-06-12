@@ -46,4 +46,5 @@ body:
       label: Use case
       description: What do you want to happen?
       placeholder: >
-        Rather than telling us how you might implement this
+        Rather than telling us how you might implement this feature, try to take a
+        step back and describe what you are trying to achiev

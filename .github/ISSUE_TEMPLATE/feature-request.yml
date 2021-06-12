@@ -41,4 +41,7 @@ body:
       label: Description
       description: A short description of your feature
 
- 
+  - type: textarea
+    attributes:
+      label: Use case
+      description: What do you wa

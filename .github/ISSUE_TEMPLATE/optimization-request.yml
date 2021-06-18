@@ -1,3 +1,4 @@
+
 #
 # Licensed to the Apache Software Foundation (ASF) under one or more
 # contributor license agreements.  See the NOTICE file distributed with
@@ -14,10 +15,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-name: Feature request
-description: Suggest an idea for this project
-title: "[Feature][Module Name] Feature title"
-labels: [ "new feature", "Waiting for reply" ]
+name: Optimization request
+description: Suggest a optimization for this project
+title: "[Optimization][Module Name] Optimization title"
+labels: [ "optimization", "Waiting for reply" ]
 body:
   - type: markdown
     attributes:
@@ -29,30 +30,17 @@ body:
       label: Search before asking
       description: >
         Please make sure to search in the [issues](https://github.com/HamaWhiteGG/autogen4j/issues?q=is%3Aissue) first
-        to see whether the same feature was requested already.
+        to see whether the same optimization was requested already.
       options:
         - label: >
             I had searched in the [issues](https://github.com/HamaWhiteGG/autogen4j/issues?q=is%3Aissue) and found no
-            similar feature requirement.
+            similar optimization requirement.
           required: true
 
   - type: textarea
     attributes:
       label: Description
-      description: A short description of your feature
-
-  - type: textarea
-    attributes:
-      label: Use case
-      description: What do you want to happen?
-      placeholder: >
-        Rather than telling us how you might implement this feature, try to take a
-        step back and describe what you are trying to achieve.
-
-  - type: textarea
-    attributes:
-      label: Related issues
-      description: Is there currently another issue associated with this?
+      description: A short description of your optimization
 
   - type: markdown
     attributes:

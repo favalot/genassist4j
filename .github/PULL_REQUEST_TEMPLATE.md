@@ -7,4 +7,6 @@ remember to adjust the documentation.
 
   - Make sure that the pull request corresponds to a [GITHUB issue](https://github.com/HamaWhiteGG/autogen4j/issues).
 
-  - Name the pull request in the form "[Fe
+  - Name the pull request in the form "[Feature] Title of the pull request", where *Feature* can be replaced by `Hotfix`, `Bug`, etc.
+
+  - Fill out t

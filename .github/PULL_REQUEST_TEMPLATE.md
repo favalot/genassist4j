@@ -9,4 +9,4 @@ remember to adjust the documentation.
 
   - Name the pull request in the form "[Feature] Title of the pull request", where *Feature* can be replaced by `Hotfix`, `Bug`, etc.
 
-  - Fill out t
+  - Fill out the template below to describe the changes contributed by the pull request. That will give reviewers the 

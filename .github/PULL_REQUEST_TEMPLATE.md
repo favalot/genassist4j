@@ -11,4 +11,8 @@ remember to adjust the documentation.
 
   - Fill out the template below to describe the changes contributed by the pull request. That will give reviewers the context they need to do the review.
 
-  - If the PR is unfinished, add `[WIP]` in your PR title, e.
+  - If the PR is unfinished, add `[WIP]` in your PR title, e.g., `[WIP][Feature] Title of the pull request`.
+
+-->
+
+## What changes were propo

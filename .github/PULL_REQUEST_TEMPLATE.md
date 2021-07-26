@@ -21,4 +21,10 @@ Issue Number: close #xxx <!-- REMOVE this line if no issue to close -->
 
 <!--(For example: This pull request proposed to add checkstyle plugin).-->
 
-## Brief cha
+## Brief change log
+
+<!--*(for example:)*
+- *Add maven-checkstyle-plugin to root pom.xml*
+-->
+
+## Verify

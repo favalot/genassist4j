@@ -27,4 +27,8 @@ Issue Number: close #xxx <!-- REMOVE this line if no issue to close -->
 - *Add maven-checkstyle-plugin to root pom.xml*
 -->
 
-## Verify
+## Verifying this change
+
+<!--*(Please pick either of the following options)*-->
+
+This chan

@@ -46,4 +46,5 @@ This change added tests and can be verified as follows:
 - *Added *Test to verify the change.*
 - *Manually verified the change by testing locally.* -->
 
-## Does this pull request potentiall
+## Does this pull request potentially affect one of the following parts
+- Dependencies (does it add or upgrade a dependency): (yes / no)

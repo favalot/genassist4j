@@ -12,4 +12,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>io.github.hamawhitegg</g
+            <groupId>io.github.hamawhitegg</groupId>
+            <artifactId>openai-client</artifactId>
+        </dependency>
+
+        <dependency>
+  

@@ -48,4 +48,8 @@
 
         <dependency>
             <groupId>org.junit.platform</groupId>
-            <artifactId>junit-platfor
+            <artifactId>junit-platform-suite-api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>o

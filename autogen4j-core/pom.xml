@@ -47,4 +47,5 @@
         </dependency>
 
         <dependency>
- 
+            <groupId>org.junit.platform</groupId>
+            <artifactId>junit-platfor

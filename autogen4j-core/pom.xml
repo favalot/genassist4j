@@ -73,4 +73,6 @@
                 <artifactId>spotless-maven-plugin</artifactId>
             </plugin>
             <plugin>
-                <groupId>org.ap
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+           

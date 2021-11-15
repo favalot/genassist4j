@@ -33,3 +33,73 @@ import java.util.List;
  */
 @Getter
 public abstract class Agent {
+
+    /**
+     * name of the agent.
+     */
+    protected String name;
+
+    /**
+     * system message for the ChatCompletion inference.
+     */
+    protected String systemMessage;
+
+    /**
+     * Send a string message to another agent.
+     *
+     * @param recipient the recipient of the message.
+     * @param message   string message to be sent.
+     */
+    public void send(Agent recipient, String message) {
+        send(recipient, new ChatMessage(message), true, false);
+    }
+
+    /**
+     * Send a message to another agent.
+     *
+     * @param recipient    the recipient of the message.
+     * @param message      message to be sent.
+     * @param requestReply whether to request a reply from the recipient.
+     * @param silent       whether to print the message sent.
+     */
+    public abstract void send(Agent recipient, ChatMessage message, boolean requestReply, boolean silent);
+
+    /**
+     * Receive a message from another agent. Once a message is received, this function sends a reply to the sender
+     * or stop. The reply can be generated automatically or entered manually by a human.
+     *
+     * @param sender       sender of an Agent instance.
+     * @param message      message from the sender.
+     * @param requestReply whether a reply is requested from the sender.
+     * @param silent       whether to print the message received.
+     */
+    public abstract void receive(Agent sender, ChatMessage message, boolean requestReply, boolean silent);
+
+    /**
+     * Generate a reply based on the received messages.
+     *
+     * @param sender   sender of an Agent instance.
+     * @param messages a list of messages received.
+     * @return a reply message.
+     */
+    public abstract ChatMessage generateReply(Agent sender, List<ChatMessage> messages);
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+
+        Agent agent = (Agent) o;
+
+        return name.equals(agent.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return name.hashCode();
+    }
+}

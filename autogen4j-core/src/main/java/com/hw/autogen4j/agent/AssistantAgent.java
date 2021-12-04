@@ -18,4 +18,9 @@
 
 package com.hw.autogen4j.agent;
 
-import static com.hw.autogen4j.entity.H
+import static com.hw.autogen4j.entity.HumanInputMode.NEVER;
+
+/**
+ * Assistant agent, designed to solve a task with LLM.
+ *
+ * @author Ham

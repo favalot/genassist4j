@@ -27,4 +27,6 @@ import static com.hw.autogen4j.entity.HumanInputMode.NEVER;
  */
 public class AssistantAgent extends ConversableAgent {
 
-    pri
+    private static final String DEFAULT_SYSTEM_MESSAGE =
+            """
+                    You are a helpful 

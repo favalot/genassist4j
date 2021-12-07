@@ -23,4 +23,8 @@ import static com.hw.autogen4j.entity.HumanInputMode.NEVER;
 /**
  * Assistant agent, designed to solve a task with LLM.
  *
- * @author Ham
+ * @author HamaWhite
+ */
+public class AssistantAgent extends ConversableAgent {
+
+    pri

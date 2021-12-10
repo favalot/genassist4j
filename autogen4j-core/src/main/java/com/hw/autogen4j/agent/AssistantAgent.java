@@ -29,4 +29,6 @@ public class AssistantAgent extends ConversableAgent {
 
     private static final String DEFAULT_SYSTEM_MESSAGE =
             """
-                    You are a helpful 
+                    You are a helpful AI assistant.
+                    Solve tasks using your coding and language skills.
+               

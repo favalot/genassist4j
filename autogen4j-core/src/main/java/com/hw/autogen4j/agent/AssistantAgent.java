@@ -32,4 +32,4 @@ public class AssistantAgent extends ConversableAgent {
                     You are a helpful AI assistant.
                     Solve tasks using your coding and language skills.
                     In the following cases, suggest python code (in a python coding block) or shell script (in a sh coding block) for the user to execute.
-                        1. When you need to collect inf
+                        1. When you need to collect info, use the code to output the info you need, for example, browse or search the web, download/read a file, 

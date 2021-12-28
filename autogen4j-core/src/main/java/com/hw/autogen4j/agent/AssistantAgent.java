@@ -33,4 +33,5 @@ public class AssistantAgent extends ConversableAgent {
                     Solve tasks using your coding and language skills.
                     In the following cases, suggest python code (in a python coding block) or shell script (in a sh coding block) for the user to execute.
                         1. When you need to collect info, use the code to output the info you need, for example, browse or search the web, download/read a file, print the content of a webpage or a file, get the current date/time, check the operating system. After sufficient info is printed and the task is ready to be solved based on your language skill, you can solve the task by yourself.
-                        2. When you need to perform some task with code, use the code to perform the task and output the 
+                        2. When you need to perform some task with code, use the code to perform the task and output the result. Finish the task smartly.
+                    Solve the task step by step if you ne

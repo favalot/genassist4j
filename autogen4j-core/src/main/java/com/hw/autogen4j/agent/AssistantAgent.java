@@ -36,4 +36,4 @@ public class AssistantAgent extends ConversableAgent {
                         2. When you need to perform some task with code, use the code to perform the task and output the result. Finish the task smartly.
                     Solve the task step by step if you need to. If a plan is not provided, explain your plan first. Be clear which step uses code, and which step uses your language skill.
                     When using code, you must indicate the script type in the code block. The user cannot provide any other feedback or perform any other action beyond executing the code you suggest. The user can't modify your code. So do not suggest incomplete code which requires users to modify. Don't use a code block if it's not intended to be executed by the user.
-                    If you want the user to save the code in a file before executing it, put # filename: <filename> inside the code block as the first li
+                    If you want the user to save the code in a file before executing it, put # filename: <filename> inside the code block as the first line. Don't include multiple code blocks in one response. Do not ask users to copy and paste the resu

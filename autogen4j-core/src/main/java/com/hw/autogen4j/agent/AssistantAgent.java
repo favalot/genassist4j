@@ -53,4 +53,6 @@ public class AssistantAgent extends ConversableAgent {
     public static class Builder extends ConversableAgent.Builder<Builder> {
 
         private Builder() {
-    
+            super();
+            this.systemMessage = DEFAULT_SYSTEM_MESSAGE;
+            t

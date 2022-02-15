@@ -46,4 +46,8 @@ public class AssistantAgent extends ConversableAgent {
         super(builder);
     }
 
-    p
+    public static Builder builder() {
+        return new Builder();
+    }
+
+    publ

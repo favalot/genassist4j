@@ -50,4 +50,7 @@ public class AssistantAgent extends ConversableAgent {
         return new Builder();
     }
 
-    publ
+    public static class Builder extends ConversableAgent.Builder<Builder> {
+
+        private Builder() {
+    

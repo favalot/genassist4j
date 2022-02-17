@@ -60,4 +60,7 @@ public class AssistantAgent extends ConversableAgent {
 
         @Override
         public AssistantAgent build() {
-      
+            return new AssistantAgent(this);
+        }
+    }
+}

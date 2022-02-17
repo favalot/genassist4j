@@ -55,4 +55,9 @@ public class AssistantAgent extends ConversableAgent {
         private Builder() {
             super();
             this.systemMessage = DEFAULT_SYSTEM_MESSAGE;
-            t
+            this.humanInputMode = NEVER;
+        }
+
+        @Override
+        public AssistantAgent build() {
+      

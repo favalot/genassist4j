@@ -136,3 +136,82 @@ public class ConversableAgent extends Agent {
     /**
      * Update the system message.
      *
+     * @param systemMessage system message for the ChatCompletion inference.
+     */
+    public void updateSystemMessage(String systemMessage) {
+        oaiSystemMessage.get(0).setContent(systemMessage);
+    }
+
+    /**
+     * The last message exchanged with the agent.
+     *
+     * @param agent The agent in the conversation.
+     *              If None and more than one agent's conversations are found, an error will be raised.
+     *              If None and only one conversation is found, the last message of the only conversation will be returned.
+     * @return The last message exchanged with the agent.
+     */
+    protected ChatMessage lastMessage(Agent agent) {
+        if (!oaiMessages.containsKey(agent)) {
+            throw new Autogen4jException(
+                    "The agent %s is not present in any conversation. No history available for this agent.",
+                    agent.getName());
+        }
+        return oaiMessages.get(agent).get(oaiMessages.get(agent).size() - 1);
+    }
+
+    /**
+     * Append a message to the ChatCompletion conversation.
+     */
+    private void appendOaiMessage(Agent agent, ChatMessage message, ChatMessageRole role) {
+        ChatMessage oaiMessage = new ChatMessage(message);
+        if (!FUNCTION.equals(message.getRole())) {
+            oaiMessage.setRole(role);
+        }
+        oaiMessages.computeIfAbsent(agent, key -> new ArrayList<>()).add(oaiMessage);
+    }
+
+    @Override
+    public void send(Agent recipient, ChatMessage message, boolean requestReply, boolean silent) {
+        // when the agent composes and sends the message, the role of the message is "assistant" unless it's "function".
+        appendOaiMessage(recipient, message, ASSISTANT);
+
+        recipient.receive(this, message, requestReply, silent);
+    }
+
+    private void printReceivedMessage(Agent sender, ChatMessage message) {
+        LOG.info("{} (to {}):\n", sender.getName(), this.getName());
+
+        if (FUNCTION.equals(message.getRole())) {
+            String funcPrint = String.format("***** Response from calling function '%s' *****", message.getName());
+            LOG.info(funcPrint);
+            LOG.info(message.getContent());
+
+            String repeatedStars = "*".repeat(funcPrint.length());
+            LOG.info(repeatedStars);
+        } else {
+            if (StringUtils.isNotEmpty(message.getContent())) {
+                LOG.info(message.getContent());
+            }
+            if (CollectionUtils.isNotEmpty(message.getToolCalls())) {
+                // only support the first function now.
+                FunctionCall functionCall = message.getToolCalls().get(0).getFunction();
+                String funcPrint = String.format("***** Suggested function Call: %s *****", functionCall.getName());
+                LOG.info(funcPrint);
+                LOG.info("Arguments: \n{}", functionCall.getArguments());
+
+                String repeatedStars = "*".repeat(funcPrint.length());
+                LOG.info(repeatedStars);
+            }
+        }
+        String repeatedHyphens = "\n" + "-".repeat(80);
+        LOG.info(repeatedHyphens);
+    }
+
+    private void processReceivedMessage(Agent sender, ChatMessage message, boolean silent) {
+        // when the agent receives a message, the role of the message is "user" unless it's "function".
+        appendOaiMessage(sender, message, USER);
+
+        if (!silent) {
+            printReceivedMessage(sender, message);
+        }
+    }

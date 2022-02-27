@@ -42,3 +42,97 @@ import static com.hw.autogen4j.util.CodeUtil.extractCode;
 import static com.hw.openai.entity.chat.ChatMessageRole.*;
 
 /**
+ * A class for generic conversable agents which can be configured as assistant or user proxy.
+ * <p>
+ * After receiving each message, the agent will send a reply to the sender unless the msg is a termination msg.
+ * For example, AssistantAgent and UserProxyAgent are subclasses of this class, configured with different settings.
+ *
+ * @author HamaWhite
+ */
+public class ConversableAgent extends Agent {
+
+    private static final Logger LOG = LoggerFactory.getLogger(ConversableAgent.class);
+
+    private static final String NO_HUMAN_INPUT_MSG = "NO HUMAN INPUT RECEIVED.";
+
+    /**
+     * a function that takes a message in the form of a dictionary and
+     * returns a boolean value indicating if this received message is a termination message.
+     */
+    protected Predicate<ChatMessage> isTerminationMsg;
+
+    /**
+     * maximum number of consecutive auto replies
+     */
+    protected int maxConsecutiveAutoReply;
+
+    /**
+     * whether to ask for human inputs every time a message is received.
+     */
+    protected HumanInputMode humanInputMode;
+
+    /**
+     * mapping function names (passed to llm) to functions.
+     */
+    protected Map<String, Function<?, ?>> functionMap;
+
+    /**
+     * config for the code execution.
+     */
+    protected CodeExecutionConfig codeExecutionConfig;
+
+    /**
+     * a client for interacting with the OpenAI API.
+     */
+    protected OpenAiClient client;
+
+    /**
+     * Chat conversation.
+     */
+    protected ChatCompletion chatCompletion;
+
+    /**
+     * default auto reply when no code execution or llm-based reply is generated.
+     */
+    protected String defaultAutoReply;
+
+    private final Map<Agent, Integer> consecutiveAutoReplyCounter = new HashMap<>();
+    private final List<ChatMessage> oaiSystemMessage;
+    private final Map<Agent, List<ChatMessage>> oaiMessages = new HashMap<>();
+
+    private final List<BiFunction<Agent, List<ChatMessage>, ReplyResult>> replyFuncList;
+
+    protected ConversableAgent(Builder<?> builder) {
+        this.name = builder.name;
+        this.systemMessage = builder.systemMessage;
+        this.isTerminationMsg = builder.isTerminationMsg;
+        this.maxConsecutiveAutoReply = builder.maxConsecutiveAutoReply;
+        this.humanInputMode = builder.humanInputMode;
+        this.functionMap = builder.functionMap;
+        this.codeExecutionConfig = builder.codeExecutionConfig;
+        this.client = builder.client;
+        this.chatCompletion = builder.chatCompletion;
+        this.defaultAutoReply = builder.defaultAutoReply;
+
+        this.oaiSystemMessage = List.of(new ChatMessage(SYSTEM, systemMessage));
+        // creating a list of method references
+        this.replyFuncList = Lists.newArrayList(
+                this::checkTerminationAndHumanReply,
+                this::generateFunctionCallReply,
+                this::generateCodeExecutionReply,
+                this::generateOaiReply);
+    }
+
+    /**
+     * The reply function will be called when the trigger matches the sender.
+     * The function registered later will be checked earlier by default.
+     *
+     * @param replyFunc the reply function.
+     */
+    protected void registerReply(BiFunction<Agent, List<ChatMessage>, ReplyResult> replyFunc) {
+        this.replyFuncList.add(0, replyFunc);
+    }
+
+    /**
+     * Update the system message.
+     *

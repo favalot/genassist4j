@@ -215,3 +215,96 @@ public class ConversableAgent extends Agent {
             printReceivedMessage(sender, message);
         }
     }
+
+    @Override
+    public void receive(Agent sender, ChatMessage message, boolean requestReply, boolean silent) {
+        processReceivedMessage(sender, message, silent);
+
+        if (requestReply) {
+            var reply = generateReply(sender, oaiMessages.get(sender));
+            if (reply != null) {
+                send(sender, reply, true, silent);
+            }
+        }
+    }
+
+    private void prepareChat(ConversableAgent recipient, boolean clearHistory) {
+        this.resetConsecutiveAutoReplyCounter(recipient);
+        recipient.resetConsecutiveAutoReplyCounter(this);
+
+        if (clearHistory) {
+            this.clearHistory(recipient);
+            recipient.clearHistory(this);
+        }
+    }
+
+    /**
+     * Initiate a chat with the recipient agent.
+     * This method will clear the chat history with the agent, but it won't print the messages for this conversation.
+     *
+     * @param recipient the recipient agent.
+     * @param message   the message to send.
+     */
+    public void initiateChat(ConversableAgent recipient, String message) {
+        initiateChat(recipient, message, true, false);
+    }
+
+    /**
+     * Initiate a chat with the recipient agent.
+     *
+     * @param recipient    the recipient agent.
+     * @param message      the message to send.
+     * @param clearHistory whether to clear the chat history with the agent.
+     * @param silent       whether to print the messages for this conversation.
+     */
+    public void initiateChat(ConversableAgent recipient, String message, boolean clearHistory, boolean silent) {
+        prepareChat(recipient, clearHistory);
+        send(recipient, new ChatMessage(message), true, silent);
+    }
+
+    private void resetConsecutiveAutoReplyCounter(Agent sender) {
+        Optional.ofNullable(sender).ifPresentOrElse(
+                value -> consecutiveAutoReplyCounter.put(value, 0),
+                consecutiveAutoReplyCounter::clear);
+    }
+
+    /**
+     * Clear the chat history of the agent.
+     *
+     * @param agent the agent with whom the chat history to clear. If null, clear the chat history with all agents.
+     */
+    private void clearHistory(Agent agent) {
+        if (agent != null && oaiMessages.containsKey(agent)) {
+            oaiMessages.get(agent).clear();
+        } else {
+            oaiMessages.clear();
+        }
+    }
+
+    /**
+     * Generate a reply using llm.
+     *
+     * @param sender   The agent object representing the sender of the message.
+     * @param messages A list of message, representing the conversation history.
+     * @return a reply using llm.
+     */
+    public ReplyResult generateOaiReply(Agent sender, List<ChatMessage> messages) {
+        chatCompletion.setMessages(ListUtils.union(oaiSystemMessage, messages));
+        ChatCompletionResp response = client.createChatCompletion(chatCompletion);
+        return new ReplyResult(true, response.getChoices().get(0).getMessage());
+    }
+
+    /**
+     * Generate a reply using code execution.
+     *
+     * @param sender   The agent object representing the sender of the message.
+     * @param messages A list of message, representing the conversation history.
+     * @return a reply using code execution.
+     */
+    private ReplyResult generateCodeExecutionReply(Agent sender, List<ChatMessage> messages) {
+        if (codeExecutionConfig == null) {
+            return new ReplyResult(false, null);
+        }
+
+        int lastMessagesNumber = codeExecutionConfig.getLastMessagesNumber();
+        int messagesToScan = lastMessagesNumber;

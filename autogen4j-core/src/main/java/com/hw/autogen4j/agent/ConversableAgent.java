@@ -308,3 +308,98 @@ public class ConversableAgent extends Agent {
 
         int lastMessagesNumber = codeExecutionConfig.getLastMessagesNumber();
         int messagesToScan = lastMessagesNumber;
+        // indicates auto mode, find when the agent last spoke
+        if (lastMessagesNumber == -1) {
+            for (int i = messages.size() - 1; i >= 0; i--) {
+                ChatMessage message = messages.get(i);
+                if (USER.equals(message.getRole())) {
+                    break;
+                }
+                messagesToScan += 1;
+            }
+        }
+
+        /*
+         * iterate through the last n messages reversely. if code blocks are found, execute the code blocks and return
+         * the output, if no code blocks are found, continue
+         */
+        for (int i = 0; i < Math.min(messages.size(), messagesToScan); i++) {
+            ChatMessage message = messages.get(messages.size() - 1 - i);
+            String content = message.getContent();
+            if (StringUtils.isEmpty(content)) {
+                continue;
+            }
+
+            List<CodeBlock> codeBlocks = extractCode(content);
+            CodeExecutionResult result = executeCodeBlocks(codeBlocks);
+
+            String exitCodeToStr = result.exitCode() == 0 ? "execution succeeded" : "execution failed";
+            String reply = String.format("exitcode: %s (%s)%nCode output: %s", result.exitCode(), exitCodeToStr,
+                    result.logs());
+            return new ReplyResult(true, new ChatMessage(reply));
+        }
+        return new ReplyResult(false, null);
+    }
+
+    /**
+     * Generate a reply using function call.
+     *
+     * @param sender   The agent object representing the sender of the message.
+     * @param messages A list of message, representing the conversation history.
+     * @return a reply using function call.
+     */
+    private ReplyResult generateFunctionCallReply(Agent sender, List<ChatMessage> messages) {
+        ChatMessage message = messages.get(messages.size() - 1);
+        if (CollectionUtils.isNotEmpty(message.getToolCalls())) {
+            // only supports executing the first function now.
+            ChatMessage functionResult = executeFunction(message.getToolCalls().get(0).getFunction());
+            return new ReplyResult(true, functionResult);
+        }
+        return new ReplyResult(false, null);
+    }
+
+    /**
+     * Check if the conversation should be terminated, and if human reply is provided.
+     * <p>
+     * This method checks for conditions that require the conversation to be terminated, such as reaching
+     * a maximum number of consecutive auto-replies or encountering a termination message. Additionally,
+     * it prompts for and processes human input based on the configured human input mode, which can be
+     * 'ALWAYS', 'NEVER', or 'TERMINATE'. The method also manages the consecutive auto-reply counter
+     * for the conversation and prints relevant messages based on the human input received.
+     *
+     * @param sender   The agent object representing the sender of the message.
+     * @param messages A list of message, representing the conversation history.
+     * @return a boolean indicating if the conversation should be terminated and a human reply
+     */
+    private ReplyResult checkTerminationAndHumanReply(Agent sender, List<ChatMessage> messages) {
+        ChatMessage message = messages.get(messages.size() - 1);
+        String reply = "";
+        String noHumanInputMsg = "";
+        if (humanInputMode.equals(ALWAYS)) {
+            reply = getHumanInput(
+                    "Provide feedback to %s. Press enter to skip and use auto-reply, or type 'exit' to end the conversation: "
+                            .formatted(sender.getName()));
+
+            noHumanInputMsg = reply.isEmpty() ? NO_HUMAN_INPUT_MSG : "";
+            // if the human input is empty, and the message is a termination message, then we will terminate the
+            // conversation
+            reply = !reply.isEmpty() || !isTerminationMsg.test(message) ? reply : "exit";
+        } else {
+            if (consecutiveAutoReplyCounter.getOrDefault(sender, 0) > maxConsecutiveAutoReply) {
+                if (humanInputMode.equals(NEVER)) {
+                    reply = "exit";
+                } else {
+                    // if humanInputMode equals "TERMINATE"
+                    boolean terminate = isTerminationMsg.test(message);
+                    String prompt = terminate
+                            ? "Please give feedback to %s. Press enter or type 'exit' to stop the conversation: "
+                                    .formatted(sender.getName())
+                            : "Please give feedback to %s. Press enter to skip and use auto-reply, or type 'exit' to stop the conversation: "
+                                    .formatted(sender.getName());
+                    reply = getHumanInput(prompt);
+                    noHumanInputMsg = reply.isEmpty() ? NO_HUMAN_INPUT_MSG : "";
+                    // if the human input is empty, and the message is a termination message, then we will terminate the
+                    // conversation
+                    reply = !reply.isEmpty() || !terminate ? reply : "exit";
+                }
+            } else if (isTerminationMsg.test(message)) {

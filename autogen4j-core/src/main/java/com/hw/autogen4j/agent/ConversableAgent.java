@@ -403,3 +403,110 @@ public class ConversableAgent extends Agent {
                     reply = !reply.isEmpty() || !terminate ? reply : "exit";
                 }
             } else if (isTerminationMsg.test(message)) {
+                if (humanInputMode.equals(NEVER)) {
+                    reply = "exit";
+                } else {
+                    // if humanInputMode equals "TERMINATE":
+                    reply = getHumanInput(
+                            "Please give feedback to %s. Press enter or type 'exit' to stop the conversation: "
+                                    .formatted(sender.getName()));
+
+                    noHumanInputMsg = reply.isEmpty() ? NO_HUMAN_INPUT_MSG : "";
+                    // If the human input is empty, then we will terminate the conversation
+                    reply = reply.isEmpty() ? "exit" : reply;
+                }
+            }
+        }
+        // print the noHumanInputMsg
+        if (!noHumanInputMsg.isEmpty()) {
+            LOG.info("\n>>>>>>>> {}", noHumanInputMsg);
+        }
+        // stop the conversation
+        if ("exit".equals(reply)) {
+            // reset the consecutiveAutoReplyCounter
+            consecutiveAutoReplyCounter.put(sender, 0);
+            return new ReplyResult(true, null);
+        }
+        // send the human reply
+        if (!reply.isEmpty()) {
+            // reset the consecutiveAutoReplyCounter
+            consecutiveAutoReplyCounter.put(sender, 0);
+            return new ReplyResult(true, new ChatMessage(reply));
+        }
+        // increment the consecutiveAutoReplyCounter
+        consecutiveAutoReplyCounter.put(sender, consecutiveAutoReplyCounter.getOrDefault(sender, 0) + 1);
+        if (!humanInputMode.equals(NEVER)) {
+            LOG.info("\n>>>>>>>> USING AUTO REPLY...");
+        }
+        return new ReplyResult(false, null);
+    }
+
+    @Override
+    public ChatMessage generateReply(Agent sender, List<ChatMessage> messages) {
+        if (CollectionUtils.isEmpty(messages)) {
+            messages = oaiMessages.get(sender);
+        }
+        // loop through each method
+        for (var replyFunc : replyFuncList) {
+            ReplyResult replyResult = replyFunc.apply(sender, messages);
+            // if termination is required, immediately return the reply
+            if (replyResult.terminate()) {
+                return replyResult.reply();
+            }
+        }
+        // if no termination occurred, return default auto reply
+        return new ChatMessage(defaultAutoReply);
+    }
+
+    /**
+     * Get human input.
+     * Override this method to customize the way to get human input.
+     *
+     * @param prompt prompt for the human input.
+     * @return human input.
+     */
+    protected String getHumanInput(String prompt) {
+        LOG.info(prompt);
+        Scanner scanner = new Scanner(System.in);
+        return scanner.nextLine();
+    }
+
+    /**
+     * Execute the code blocks and return the result.
+     *
+     * @param codeBlocks List of code blocks to execute.
+     * @return CodeExecutionResult representing the result of code execution.
+     */
+    private CodeExecutionResult executeCodeBlocks(List<CodeBlock> codeBlocks) {
+        StringBuilder allLogs = new StringBuilder();
+        CodeExecutionResult result;
+        for (int i = 0; i < codeBlocks.size(); i++) {
+            CodeBlock codeBlock = codeBlocks.get(i);
+            String language = codeBlock.language();
+            String code = codeBlock.code();
+            LOG.info("\n>>>>>>>> EXECUTING CODE BLOCK {} (inferred language is {})...", i + 1, language);
+
+            if (Set.of("bash", "shell", "sh", "python").contains(language.toLowerCase())) {
+                result = executeCode(language, code, codeExecutionConfig);
+            } else {
+                // the language is not supported, then return an error message.
+                result = new CodeExecutionResult(1, "unknown language " + language);
+            }
+
+            allLogs.append("\n").append(result.logs());
+            if (result.exitCode() != 0) {
+                return new CodeExecutionResult(result.exitCode(), allLogs.toString());
+            }
+        }
+        return new CodeExecutionResult(0, allLogs.toString());
+    }
+
+    /**
+     * Execute a function call and return the result.
+     *
+     * @param functionCall The function call to be executed.
+     * @return The result of the function call
+     */
+    private ChatMessage executeFunction(FunctionCall functionCall) {
+        // TODO
+        return null;

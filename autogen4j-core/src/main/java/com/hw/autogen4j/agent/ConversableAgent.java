@@ -510,3 +510,100 @@ public class ConversableAgent extends Agent {
     private ChatMessage executeFunction(FunctionCall functionCall) {
         // TODO
         return null;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        return super.equals(o);
+    }
+
+    @Override
+    public int hashCode() {
+        return super.hashCode();
+    }
+
+    @SuppressWarnings("unchecked")
+    protected abstract static class Builder<T extends Builder<T>> {
+
+        /**
+         * name of the agent.
+         */
+        protected String name;
+
+        /**
+         * system message for the ChatCompletion inference.
+         */
+        protected String systemMessage = "You are a helpful AI Assistant.";
+
+        /**
+         * a function that takes a message in the form of a dictionary and
+         * returns a boolean value indicating if this received message is a termination message.
+         */
+        protected Predicate<ChatMessage> isTerminationMsg = e -> "TERMINATE".equals(e.getContent());
+
+        /**
+         * maximum number of consecutive auto replies
+         */
+        protected int maxConsecutiveAutoReply = 10;
+
+        /**
+         * whether to ask for human inputs every time a message is received.
+         */
+        protected HumanInputMode humanInputMode = TERMINATE;
+
+        /**
+         * mapping function names (passed to llm) to functions.
+         */
+        protected Map<String, Function<?, ?>> functionMap;
+
+        /**
+         * config for the code execution.
+         */
+        protected CodeExecutionConfig codeExecutionConfig;
+
+        /**
+         * a client for interacting with the OpenAI API.
+         */
+        protected OpenAiClient client;
+
+        /**
+         * Chat conversation.
+         */
+        protected ChatCompletion chatCompletion;
+
+        /**
+         * default auto reply when no code execution or llm-based reply is generated.
+         */
+        protected String defaultAutoReply = "";
+
+        protected Builder() {
+            this.client = OpenAiClient.builder()
+                    .requestTimeout(60)
+                    .build()
+                    .init();
+
+            this.chatCompletion = ChatCompletion.builder()
+                    .model("gpt-4")
+                    .temperature(0)
+                    .build();
+        }
+
+        public T name(String name) {
+            this.name = name;
+            return (T) this;
+        }
+
+        public T systemMessage(String systemMessage) {
+            this.systemMessage = systemMessage;
+            return (T) this;
+        }
+
+        public T isTerminationMsg(Predicate<ChatMessage> isTerminationMsg) {
+            this.isTerminationMsg = isTerminationMsg;
+            return (T) this;
+        }
+
+        public T maxConsecutiveAutoReply(int maxConsecutiveAutoReply) {
+            this.maxConsecutiveAutoReply = maxConsecutiveAutoReply;
+            return (T) this;
+        }

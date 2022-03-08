@@ -607,3 +607,37 @@ public class ConversableAgent extends Agent {
             this.maxConsecutiveAutoReply = maxConsecutiveAutoReply;
             return (T) this;
         }
+
+        public T humanInputMode(HumanInputMode humanInputMode) {
+            this.humanInputMode = humanInputMode;
+            return (T) this;
+        }
+
+        public T functionMap(Map<String, Function<?, ?>> functionMap) {
+            this.functionMap = functionMap;
+            return (T) this;
+        }
+
+        public T codeExecutionConfig(CodeExecutionConfig codeExecutionConfig) {
+            this.codeExecutionConfig = codeExecutionConfig;
+            return (T) this;
+        }
+
+        public T client(OpenAiClient client) {
+            this.client = client;
+            return (T) this;
+        }
+
+        public T chatCompletion(ChatCompletion chatCompletion) {
+            this.chatCompletion = chatCompletion;
+            return (T) this;
+        }
+
+        public T defaultAutoReply(String defaultAutoReply) {
+            this.defaultAutoReply = defaultAutoReply;
+            return (T) this;
+        }
+
+        protected abstract ConversableAgent build();
+    }
+}

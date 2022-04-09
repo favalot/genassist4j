@@ -27,4 +27,7 @@ import com.hw.autogen4j.agent.ConversableAgent;
  */
 public class TeachableAgent extends ConversableAgent {
 
-    protected TeachableAgent
+    protected TeachableAgent(Builder<?> builder) {
+        super(builder);
+    }
+}

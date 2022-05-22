@@ -26,3 +26,8 @@ import com.hw.autogen4j.agent.ConversableAgent;
  * @author HamaWhite
  */
 public class TextAnalyzerAgent extends ConversableAgent {
+
+    protected TextAnalyzerAgent(Builder<?> builder) {
+        super(builder);
+    }
+}

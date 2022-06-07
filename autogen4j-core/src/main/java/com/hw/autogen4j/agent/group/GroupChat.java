@@ -96,3 +96,86 @@ public class GroupChat {
     /**
      * Returns the agent with a given name.
      *
+     * @param name The name of the agent to find.
+     * @return An Agent object with the given name.
+     * @throws IllegalArgumentException if no agent with the given name is found.
+     */
+    public Agent agentByName(String name) {
+        return agents.stream()
+                .filter(agent -> agent.getName().equals(name))
+                .findFirst()
+                .orElseThrow(() -> new IllegalArgumentException("No agent found with the given name."));
+    }
+
+    private List<String> extractAgentNames(List<Agent> agents) {
+        return agents.stream().map(Agent::getName).toList();
+
+    }
+
+    /**
+     * Return the message for selecting the next speaker.
+     *
+     * @param agents A list of agents in the role play game.
+     * @return The message for selecting the next speaker.
+     */
+    public String selectSpeakerMsg(List<Agent> agents) {
+        return """
+                You are in a role play game. The following roles are available:
+                %s
+
+                Read the following conversation.
+                Then select the next role from %s to play. Only return the role.
+                """.formatted(participantRoles(agents), extractAgentNames(agents));
+    }
+
+    /**
+     * Selects the next speaker in a conversation.
+     *
+     * @param lastSpeaker The last speaker who spoken in conversation.
+     * @param selector    The ConversableAgent object to provide possible behavior in the conversation.
+     * @return An Agent object representing the selected next speaker.
+     */
+    public Agent selectSpeaker(Agent lastSpeaker, ConversableAgent selector) {
+        if (agents.size() < 2) {
+            throw new IllegalArgumentException("""
+                    GroupChat is underpopulated with %d agents.
+                    Please add more agents to the GroupChat or use direct communication instead.
+                    """.formatted(agents.size()));
+        }
+        List<Agent> updatedAgents = new ArrayList<>(agents);
+        // remove the last speaker from the list to avoid selecting the same speaker if allowRepeatSpeaker is False
+        if (!allowRepeatSpeaker) {
+            updatedAgents.remove(lastSpeaker);
+        }
+        selector.updateSystemMessage(selectSpeakerMsg(updatedAgents));
+
+        List<ChatMessage> updatedMessages = new ArrayList<>(messages);
+        updatedMessages.add(new ChatMessage(SYSTEM,
+                "Read the above conversation. Then select the next role from %s to play. Only return the role."
+                        .formatted(extractAgentNames(updatedAgents))));
+
+        ReplyResult replyResult = selector.generateOaiReply(selector, updatedMessages);
+        String content = replyResult.reply().getContent();
+
+        // if exactly one agent is mentioned, use it. Otherwise, leave the OAI response unmodified
+        Map<String, Integer> mentions = mentionedAgents(content, updatedAgents);
+
+        if (mentions.size() == 1) {
+            String name = mentions.keySet().iterator().next();
+            return agentByName(name);
+        } else {
+            throw new Autogen4jException("GroupChat selectSpeaker failed to resolve the next speaker's name. " +
+                    "This is because the speaker selection OAI call returned:\n %s", content);
+        }
+    }
+
+    /**
+     * Get the roles of a list of agents.
+     *
+     * @param agents A list of agents.
+     * @return A string of the roles of each agent in the list.
+     */
+    private String participantRoles(List<Agent> agents) {
+        List<String> roles = agents.stream()
+                .map(agent -> {
+                    if (StringUtils.isEmpty(agent.getSystemMessage())) {

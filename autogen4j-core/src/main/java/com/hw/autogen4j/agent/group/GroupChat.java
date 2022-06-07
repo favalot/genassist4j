@@ -179,3 +179,37 @@ public class GroupChat {
         List<String> roles = agents.stream()
                 .map(agent -> {
                     if (StringUtils.isEmpty(agent.getSystemMessage())) {
+                        LOG.warn("The agent {} has an empty systemMessage, and may not work well with GroupChat.",
+                                agent.getName());
+                    }
+                    return agent.getName() + ": " + agent.getSystemMessage();
+                }).toList();
+        return String.join("\n", roles);
+    }
+
+    /**
+     * Counts the number of times each agent is mentioned in the provided message content.
+     *
+     * @param content The content of the message, either as a single string or a list of strings.
+     * @param agents  A list of Agent objects
+     * @return a map counter for mentioned agents.
+     */
+    private Map<String, Integer> mentionedAgents(String content, List<Agent> agents) {
+        Map<String, Integer> mentions = new HashMap<>();
+        for (Agent agent : agents) {
+            // finds agent mentions, taking word boundaries into account
+            Pattern pattern = Pattern.compile("(?<=\\W)" + Pattern.quote(agent.getName()) + "(?=\\W)");
+            // pad the message to help with matching
+            Matcher matcher = pattern.matcher(" " + content + " ");
+            int count = 0;
+            while (matcher.find()) {
+                count++;
+            }
+            if (count > 0) {
+                mentions.put(agent.getName(), count);
+            }
+        }
+        return mentions;
+    }
+
+}

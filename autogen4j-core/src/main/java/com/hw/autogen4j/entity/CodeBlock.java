@@ -19,4 +19,7 @@
 package com.hw.autogen4j.entity;
 
 /**
- * @author Ha
+ * @author HamaWhite
+ */
+public record CodeBlock(String language, String code) {
+}

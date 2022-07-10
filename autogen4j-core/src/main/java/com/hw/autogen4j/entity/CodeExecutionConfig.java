@@ -28,4 +28,9 @@ import lombok.Data;
  */
 @Data
 @Builder
-public class CodeEx
+public class CodeExecutionConfig {
+
+    /**
+     * the working directory for the code execution.
+     */
+ 

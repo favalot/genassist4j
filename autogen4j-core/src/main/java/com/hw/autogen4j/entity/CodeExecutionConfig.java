@@ -19,4 +19,13 @@
 package com.hw.autogen4j.entity;
 
 import lombok.Builder;
-import lom
+import lombok.Data;
+
+/**
+ * Config for the code execution.
+ *
+ * @author HamaWhite
+ */
+@Data
+@Builder
+public class CodeEx

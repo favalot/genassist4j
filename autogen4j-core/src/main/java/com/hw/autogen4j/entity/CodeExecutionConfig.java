@@ -33,4 +33,8 @@ public class CodeExecutionConfig {
     /**
      * the working directory for the code execution.
      */
- 
+    @Builder.Default
+    private String workDir = "extensions";
+
+    /**
+     * the docker i

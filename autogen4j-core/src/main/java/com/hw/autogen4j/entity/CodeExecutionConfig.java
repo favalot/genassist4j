@@ -37,4 +37,9 @@ public class CodeExecutionConfig {
     private String workDir = "extensions";
 
     /**
-     * the docker i
+     * the docker image to use for code execution.
+     */
+    private String docker;
+
+    /**
+     * the 

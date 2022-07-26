@@ -49,4 +49,7 @@ public class CodeExecutionConfig {
 
     /**
      * the number of messages to look back for code execution.
-     * default 
+     * default value is 1, and -1 indicates auto mode.
+     */
+    @Builder.Default
+    private int last

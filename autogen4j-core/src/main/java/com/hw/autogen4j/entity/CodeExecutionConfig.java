@@ -46,3 +46,7 @@ public class CodeExecutionConfig {
      */
     @Builder.Default
     private int timeout = 600;
+
+    /**
+     * the number of messages to look back for code execution.
+     * default 

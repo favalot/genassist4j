@@ -42,4 +42,7 @@ public class CodeExecutionConfig {
     private String docker;
 
     /**
-     * the 
+     * the maximum execution time in seconds.
+     */
+    @Builder.Default
+    private int timeout = 600;

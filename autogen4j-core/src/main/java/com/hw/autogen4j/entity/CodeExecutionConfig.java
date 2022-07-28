@@ -52,4 +52,5 @@ public class CodeExecutionConfig {
      * default value is 1, and -1 indicates auto mode.
      */
     @Builder.Default
-    private int last
+    private int lastMessagesNumber = 1;
+}

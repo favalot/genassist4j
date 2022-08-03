@@ -20,4 +20,7 @@ package com.hw.autogen4j.entity;
 
 
 /**
- * Represents the result of code exec
+ * Represents the result of code execution.
+ *
+ * @param exitCode  0 if the code executes successfully.
+ * @param logs the error message i

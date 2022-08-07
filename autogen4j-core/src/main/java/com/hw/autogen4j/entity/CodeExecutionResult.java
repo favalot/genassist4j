@@ -30,4 +30,7 @@ package com.hw.autogen4j.entity;
  */
 public record CodeExecutionResult(int exitCode, String logs, String image) {
 
-    publ
+    public CodeExecutionResult(int exitCode, String logs) {
+        this(exitCode, logs, null);
+    }
+}

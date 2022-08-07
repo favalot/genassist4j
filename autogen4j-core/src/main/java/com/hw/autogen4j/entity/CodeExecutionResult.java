@@ -28,4 +28,6 @@ package com.hw.autogen4j.entity;
  *
  * @author HamaWhite
  */
-p
+public record CodeExecutionResult(int exitCode, String logs, String image) {
+
+    publ

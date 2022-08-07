@@ -24,4 +24,8 @@ package com.hw.autogen4j.entity;
  *
  * @param exitCode  0 if the code executes successfully.
  * @param logs the error message if the code fails to execute, the stdout otherwise.
- * @param image the docker image nam
+ * @param image the docker image name after container run when docker is used.
+ *
+ * @author HamaWhite
+ */
+p

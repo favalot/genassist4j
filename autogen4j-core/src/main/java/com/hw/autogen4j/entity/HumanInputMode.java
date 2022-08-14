@@ -16,4 +16,8 @@
  * limitations under the License.
  */
 
-package com.hw.autog
+package com.hw.autogen4j.entity;
+
+/**
+ * Whether to ask for human inputs every time a message is received.
+ *

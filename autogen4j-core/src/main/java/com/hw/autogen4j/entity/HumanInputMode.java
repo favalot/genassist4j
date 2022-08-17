@@ -21,3 +21,8 @@ package com.hw.autogen4j.entity;
 /**
  * Whether to ask for human inputs every time a message is received.
  *
+ * @author HamaWhite
+ */
+public enum HumanInputMode {
+    /**
+     * the agent prompts for 

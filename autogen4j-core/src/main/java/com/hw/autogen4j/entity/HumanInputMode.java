@@ -25,4 +25,5 @@ package com.hw.autogen4j.entity;
  */
 public enum HumanInputMode {
     /**
-     * the agent prompts for 
+     * the agent prompts for human input every time a message is received. Under this mode, the conversation stops
+     

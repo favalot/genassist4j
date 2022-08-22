@@ -26,4 +26,9 @@ package com.hw.autogen4j.entity;
 public enum HumanInputMode {
     /**
      * the agent prompts for human input every time a message is received. Under this mode, the conversation stops
-     * when the human input is "exit", or when is_termination_msg is True and there is no human in
+     * when the human input is "exit", or when is_termination_msg is True and there is no human input.
+     */
+    ALWAYS,
+
+    /**
+     * the agent only prompts for human input

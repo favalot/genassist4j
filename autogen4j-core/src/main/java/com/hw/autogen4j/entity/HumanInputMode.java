@@ -31,4 +31,5 @@ public enum HumanInputMode {
     ALWAYS,
 
     /**
-     * the agent only prompts for human input
+     * the agent only prompts for human input only when a termination message is received or the number of auto reply
+     * reaches the max_consecuti

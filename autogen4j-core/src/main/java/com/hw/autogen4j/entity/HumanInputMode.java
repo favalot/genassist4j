@@ -37,4 +37,5 @@ public enum HumanInputMode {
     TERMINATE,
 
     /**
-     * the agent will never prompt for human input. Un
+     * the agent will never prompt for human input. Under this mode, the conversation stops when the number of auto
+     * reply reaches the m

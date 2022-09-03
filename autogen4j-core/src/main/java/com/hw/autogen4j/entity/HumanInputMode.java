@@ -38,4 +38,7 @@ public enum HumanInputMode {
 
     /**
      * the agent will never prompt for human input. Under this mode, the conversation stops when the number of auto
-     * reply reaches the m
+     * reply reaches the max_consecutive_auto_reply or when is_termination_msg is True.
+     */
+    NEVER
+}

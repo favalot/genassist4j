@@ -23,4 +23,8 @@ import java.io.Serial;
 /**
  * Autogen4jException
  *
- * @author H
+ * @author HamaWhite
+ */
+public class Autogen4jException extends RuntimeException {
+
+    @Seri

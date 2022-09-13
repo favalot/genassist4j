@@ -16,4 +16,11 @@
  * limitations under the License.
  */
 
-pack
+package com.hw.autogen4j.exception;
+
+import java.io.Serial;
+
+/**
+ * Autogen4jException
+ *
+ * @author H

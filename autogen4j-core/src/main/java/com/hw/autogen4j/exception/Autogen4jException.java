@@ -31,4 +31,6 @@ public class Autogen4jException extends RuntimeException {
     private static final long serialVersionUID = 193141189399279147L;
 
     /**
-     * Cr
+     * Creates a new Exception with the given message and null as the cause.
+     *
+     * @param messa

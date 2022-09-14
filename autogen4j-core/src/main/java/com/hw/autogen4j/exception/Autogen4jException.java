@@ -27,4 +27,8 @@ import java.io.Serial;
  */
 public class Autogen4jException extends RuntimeException {
 
-    @Seri
+    @Serial
+    private static final long serialVersionUID = 193141189399279147L;
+
+    /**
+     * Cr

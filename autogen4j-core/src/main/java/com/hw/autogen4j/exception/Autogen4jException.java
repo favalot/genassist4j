@@ -33,4 +33,7 @@ public class Autogen4jException extends RuntimeException {
     /**
      * Creates a new Exception with the given message and null as the cause.
      *
-     * @param messa
+     * @param message The exception message
+     */
+    public Autogen4jException(String message) {
+        super(message

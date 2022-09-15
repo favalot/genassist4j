@@ -43,4 +43,6 @@ public class Autogen4jException extends RuntimeException {
      * Creates a new Autogen4jException with the given formatted message and arguments.
      *
      * @param message The exception message format string
-     * @param a
+     * @param args    Arguments to format the message
+     */
+    public Autogen4jException(

@@ -59,4 +59,7 @@ public class Autogen4jException extends RuntimeException {
     }
 
     /**
-     * Creates a new exception with the given 
+     * Creates a new exception with the given message and cause.
+     *
+     * @param message The exception message
+     * @param cause   The 

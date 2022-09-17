@@ -55,3 +55,8 @@ public class Autogen4jException extends RuntimeException {
      * @param cause The exception that caused this exception
      */
     public Autogen4jException(Throwable cause) {
+        super(cause);
+    }
+
+    /**
+     * Creates a new exception with the given 

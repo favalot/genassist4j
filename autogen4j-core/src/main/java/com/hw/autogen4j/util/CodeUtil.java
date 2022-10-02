@@ -21,4 +21,7 @@ package com.hw.autogen4j.util;
 import com.hw.autogen4j.entity.CodeBlock;
 import com.hw.autogen4j.entity.CodeExecutionConfig;
 import com.hw.autogen4j.entity.CodeExecutionResult;
-import com.hw.autogen4j.exception.Autogen4j
+import com.hw.autogen4j.exception.Autogen4jException;
+
+import org.apache.commons.codec.digest.DigestUtils;
+import org.apache.commons.exec.*

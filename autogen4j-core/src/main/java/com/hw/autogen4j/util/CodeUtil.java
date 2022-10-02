@@ -24,4 +24,7 @@ import com.hw.autogen4j.entity.CodeExecutionResult;
 import com.hw.autogen4j.exception.Autogen4jException;
 
 import org.apache.commons.codec.digest.DigestUtils;
-import org.apache.commons.exec.*
+import org.apache.commons.exec.*;
+import org.apache.commons.lang3.StringUtils;
+
+import java.io.ByteArr

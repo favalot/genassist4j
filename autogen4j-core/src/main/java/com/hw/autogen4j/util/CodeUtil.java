@@ -27,4 +27,7 @@ import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.exec.*;
 import org.apache.commons.lang3.StringUtils;
 
-import java.io.ByteArr
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.IOException;
+import java.nio.

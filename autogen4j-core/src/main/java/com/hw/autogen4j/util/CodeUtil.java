@@ -37,4 +37,5 @@ import java.util.concurrent.TimeUnit;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static c
+import static com.hw.autogen4j.util.FileUtil.deleteFile;
+import static com.hw.autogen4j.util.FileUtil.writeCod

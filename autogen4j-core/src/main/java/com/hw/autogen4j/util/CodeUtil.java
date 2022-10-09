@@ -38,4 +38,12 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import static com.hw.autogen4j.util.FileUtil.deleteFile;
-import static com.hw.autogen4j.util.FileUtil.writeCod
+import static com.hw.autogen4j.util.FileUtil.writeCodeToFile;
+
+/**
+ * @author HamaWhite
+ */
+public class CodeUtil {
+
+    private CodeUtil() {
+   

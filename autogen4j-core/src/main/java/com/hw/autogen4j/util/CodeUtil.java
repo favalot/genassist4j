@@ -46,4 +46,8 @@ import static com.hw.autogen4j.util.FileUtil.writeCodeToFile;
 public class CodeUtil {
 
     private CodeUtil() {
-   
+        throw new IllegalStateException("Utility class");
+    }
+
+    /**
+     * Matches multi-line 

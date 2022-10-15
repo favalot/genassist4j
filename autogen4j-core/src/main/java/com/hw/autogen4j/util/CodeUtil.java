@@ -54,4 +54,6 @@ public class CodeUtil {
      * <ul>
      * <li>[ \t]* - Matches the potential spaces before the language name.</li>
      * <li>(\w+)? - Matches the language, where the ? indicates it is optional.</li>
-     * <li>[ \t]* - Matches the potential spaces (not newlines) after the language
+     * <li>[ \t]* - Matches the potential spaces (not newlines) after the language name.</li>
+     * <li>\r?\n - Ensures there is a linebreak after ```.</li>
+     * <li>(.*?) - Matc

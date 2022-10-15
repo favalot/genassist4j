@@ -53,4 +53,5 @@ public class CodeUtil {
      * Matches multi-line code blocks.
      * <ul>
      * <li>[ \t]* - Matches the potential spaces before the language name.</li>
-     * <li>(\w+)? - Matches the language, where the ? indicates it is optional
+     * <li>(\w+)? - Matches the language, where the ? indicates it is optional.</li>
+     * <li>[ \t]* - Matches the potential spaces (not newlines) after the language

@@ -61,4 +61,9 @@ public class CodeUtil {
      * <li>[ \t]* - Matches the potential spaces before the closing ``` (the spec allows indentation).</li>
      * </ul>
      */
-    private static final String CODE_BLOCK_PATTERN = "```[ \\t]*(\\w+)?[ \\t]*\\r?\\n(.*?)\\r?\\n[ \\t]
+    private static final String CODE_BLOCK_PATTERN = "```[ \\t]*(\\w+)?[ \\t]*\\r?\\n(.*?)\\r?\\n[ \\t]*```";
+
+    /**
+     * Extract code from a text.
+     *
+     * @param text the c

@@ -57,4 +57,5 @@ public class CodeUtil {
      * <li>[ \t]* - Matches the potential spaces (not newlines) after the language name.</li>
      * <li>\r?\n - Ensures there is a linebreak after ```.</li>
      * <li>(.*?) - Matches the code itself (non-greedy).</li>
-     * <li>\r?\n - Ensures there is a li
+     * <li>\r?\n - Ensures there is a linebreak before ```.</li>
+     * <li>[ \t]* - Matches the potential spaces b

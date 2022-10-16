@@ -58,4 +58,7 @@ public class CodeUtil {
      * <li>\r?\n - Ensures there is a linebreak after ```.</li>
      * <li>(.*?) - Matches the code itself (non-greedy).</li>
      * <li>\r?\n - Ensures there is a linebreak before ```.</li>
-     * <li>[ \t]* - Matches the potential spaces b
+     * <li>[ \t]* - Matches the potential spaces before the closing ``` (the spec allows indentation).</li>
+     * </ul>
+     */
+    private st

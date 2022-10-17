@@ -66,4 +66,5 @@ public class CodeUtil {
     /**
      * Extract code from a text.
      *
-     * @param text the c
+     * @param text the content to extract code from.
+     * @return a list of code blocks, each containing th

@@ -70,3 +70,9 @@ public class CodeUtil {
      * @return a list of code blocks, each containing the language and the code.
      */
     public static List<CodeBlock> extractCode(String text) {
+        return extractCode(text, false);
+    }
+
+    /**
+     * Extract code from a text.
+   

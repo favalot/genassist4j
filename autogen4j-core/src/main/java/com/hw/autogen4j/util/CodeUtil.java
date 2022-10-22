@@ -67,4 +67,6 @@ public class CodeUtil {
      * Extract code from a text.
      *
      * @param text the content to extract code from.
-     * @return a list of code blocks, each containing th
+     * @return a list of code blocks, each containing the language and the code.
+     */
+    public static List<CodeBlock> extractCode(String text) {

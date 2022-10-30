@@ -78,4 +78,6 @@ public class CodeUtil {
      *
      * @param text                 the content to extract code from.
      * @param detectSingleLineCode extracting single line code.
-     * @return a list of code blocks, eac
+     * @return a list of code blocks, each containing the language and the code.
+     */
+    public static List<CodeBlock> extractCode(Strin

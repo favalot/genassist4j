@@ -80,4 +80,5 @@ public class CodeUtil {
      * @param detectSingleLineCode extracting single line code.
      * @return a list of code blocks, each containing the language and the code.
      */
-    public static List<CodeBlock> extractCode(Strin
+    public static List<CodeBlock> extractCode(String text, boolean detectSingleLineCode) {
+        List<CodeBlock> extracte

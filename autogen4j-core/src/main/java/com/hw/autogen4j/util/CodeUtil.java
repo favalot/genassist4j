@@ -83,4 +83,5 @@ public class CodeUtil {
     public static List<CodeBlock> extractCode(String text, boolean detectSingleLineCode) {
         List<CodeBlock> extracted = new ArrayList<>();
         if (!detectSingleLineCode) {
-            Matcher
+            Matcher matcher = Pattern.compile(CODE_BLOCK_PATTERN, Pattern.DOTALL).matcher(text);
+       

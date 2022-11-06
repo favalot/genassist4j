@@ -90,4 +90,5 @@ public class CodeUtil {
             return extracted;
         }
 
-        // for ext
+        // for extracting multi-line and single-line code block, `([^`]+)` matches inline code.
+        Matcher

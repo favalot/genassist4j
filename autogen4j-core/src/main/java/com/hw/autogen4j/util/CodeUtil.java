@@ -91,4 +91,5 @@ public class CodeUtil {
         }
 
         // for extracting multi-line and single-line code block, `([^`]+)` matches inline code.
-        Matcher
+        Matcher matcher = Pattern.compile(CODE_BLOCK_PATTERN + "|`([^`]+)`").matcher(text);
+        // 

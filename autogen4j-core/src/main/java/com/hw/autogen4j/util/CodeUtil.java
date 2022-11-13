@@ -97,4 +97,5 @@ public class CodeUtil {
             String multiLineCode = matcher.group(2);
             String singleLineCode = matcher.group(3);
             if (multiLineCode != null) {
-                extracted.add(new
+                extracted.add(new CodeBlock(matcher.group(1).strip(), multiLineCode.strip()));
+            } else if (singleLineCode != nul

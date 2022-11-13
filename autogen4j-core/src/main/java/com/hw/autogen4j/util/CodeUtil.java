@@ -95,4 +95,6 @@ public class CodeUtil {
         // extract the individual code blocks and languages from the matched groups
         while (matcher.find()) {
             String multiLineCode = matcher.group(2);
-            String single
+            String singleLineCode = matcher.group(3);
+            if (multiLineCode != null) {
+                extracted.add(new

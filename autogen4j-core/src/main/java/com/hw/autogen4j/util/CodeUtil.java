@@ -100,4 +100,10 @@ public class CodeUtil {
                 extracted.add(new CodeBlock(matcher.group(1).strip(), multiLineCode.strip()));
             } else if (singleLineCode != null) {
                 extracted.add(new CodeBlock("", singleLineCode.strip()));
-  
+            }
+        }
+        return extracted;
+    }
+
+    /**
+     * Execute code in a docker contain

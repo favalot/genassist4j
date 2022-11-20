@@ -114,4 +114,5 @@ public class CodeUtil {
      * @return CodeExecutionResult representing the result of code execution.
      */
     public static CodeExecutionResult executeCode(String language, String code, CodeExecutionConfig config) {
-        if (StringUtils.is
+        if (StringUtils.isEmpty(language) || StringUtils.isEmpty(code)) {
+            throw new Autogen4jException("Either lang

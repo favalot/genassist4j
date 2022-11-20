@@ -111,4 +111,6 @@ public class CodeUtil {
      * @param language The language of the code.
      * @param code     The code to execute.
      * @param config   Configuration for code execution.
-     * @return CodeExecutio
+     * @return CodeExecutionResult representing the result of code execution.
+     */
+    public static CodeExecutionResult exec

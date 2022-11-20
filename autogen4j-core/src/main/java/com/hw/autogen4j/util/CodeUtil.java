@@ -113,4 +113,5 @@ public class CodeUtil {
      * @param config   Configuration for code execution.
      * @return CodeExecutionResult representing the result of code execution.
      */
-    public static CodeExecutionResult exec
+    public static CodeExecutionResult executeCode(String language, String code, CodeExecutionConfig config) {
+        if (StringUtils.is

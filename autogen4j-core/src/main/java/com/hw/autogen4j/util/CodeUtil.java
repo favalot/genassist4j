@@ -115,4 +115,8 @@ public class CodeUtil {
      */
     public static CodeExecutionResult executeCode(String language, String code, CodeExecutionConfig config) {
         if (StringUtils.isEmpty(language) || StringUtils.isEmpty(code)) {
-            throw new Autogen4jException("Either lang
+            throw new Autogen4jException("Either language or code must be provided.");
+        }
+
+        String workDir = config.getWorkDir();
+        String

@@ -120,4 +120,5 @@ public class CodeUtil {
 
         String workDir = config.getWorkDir();
         String codeHash = DigestUtils.md5Hex(code);
-        String fileExt = language.startsWith("python") ? "py
+        String fileExt = language.startsWith("python") ? "py" : language;
+        String filename = String.format("tmp_code_%s.%s", codeHash, fileExt);

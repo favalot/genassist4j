@@ -119,4 +119,5 @@ public class CodeUtil {
         }
 
         String workDir = config.getWorkDir();
-        String
+        String codeHash = DigestUtils.md5Hex(code);
+        String fileExt = language.startsWith("python") ? "py

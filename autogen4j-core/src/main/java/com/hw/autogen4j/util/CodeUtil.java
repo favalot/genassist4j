@@ -122,3 +122,6 @@ public class CodeUtil {
         String codeHash = DigestUtils.md5Hex(code);
         String fileExt = language.startsWith("python") ? "py" : language;
         String filename = String.format("tmp_code_%s.%s", codeHash, fileExt);
+
+        // write the code string to a file specified by the filename.
+        wr

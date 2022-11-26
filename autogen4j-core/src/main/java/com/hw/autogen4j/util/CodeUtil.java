@@ -126,4 +126,5 @@ public class CodeUtil {
         // write the code string to a file specified by the filename.
         writeCodeToFile(workDir, filename, code);
 
-        CodeExecutionResult executionResult = StringUt
+        CodeExecutionResult executionResult = StringUtils.isEmpty(config.getDocker())
+                ? executeCodeLocally(language, workDir, filename, config.getTim

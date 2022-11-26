@@ -124,4 +124,6 @@ public class CodeUtil {
         String filename = String.format("tmp_code_%s.%s", codeHash, fileExt);
 
         // write the code string to a file specified by the filename.
-        wr
+        writeCodeToFile(workDir, filename, code);
+
+        CodeExecutionResult executionResult = StringUt

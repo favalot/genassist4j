@@ -127,4 +127,8 @@ public class CodeUtil {
         writeCodeToFile(workDir, filename, code);
 
         CodeExecutionResult executionResult = StringUtils.isEmpty(config.getDocker())
-                ? executeCodeLocally(language, workDir, filename, config.getTim
+                ? executeCodeLocally(language, workDir, filename, config.getTimeout())
+                : executeCodeInDocker();
+
+        deleteFile(workDir, filename);
+      

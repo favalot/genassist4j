@@ -134,4 +134,6 @@ public class CodeUtil {
         return executionResult;
     }
 
-    private static String getExecutableForLanguage(String 
+    private static String getExecutableForLanguage(String language) throws UnsupportedOperationException {
+        return switch (language) {
+            case

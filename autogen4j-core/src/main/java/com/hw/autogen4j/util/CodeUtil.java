@@ -137,4 +137,5 @@ public class CodeUtil {
     private static String getExecutableForLanguage(String language) throws UnsupportedOperationException {
         return switch (language) {
             case "python" -> language;
-            case "shell", "bash", "sh", "powershell" -> "
+            case "shell", "bash", "sh", "powershell" -> "sh";
+            default -> throw new Autogen4jException("Language not recognized in code executio

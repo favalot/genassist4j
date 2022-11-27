@@ -136,4 +136,5 @@ public class CodeUtil {
 
     private static String getExecutableForLanguage(String language) throws UnsupportedOperationException {
         return switch (language) {
-            case
+            case "python" -> language;
+            case "shell", "bash", "sh", "powershell" -> "

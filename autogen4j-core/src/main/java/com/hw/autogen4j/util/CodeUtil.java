@@ -138,4 +138,8 @@ public class CodeUtil {
         return switch (language) {
             case "python" -> language;
             case "shell", "bash", "sh", "powershell" -> "sh";
-            default -> throw new Autogen4jException("Language not recognized in code executio
+            default -> throw new Autogen4jException("Language not recognized in code execution: %s", language);
+        };
+    }
+
+    public static CodeExecutionResult executeCodeLocally

@@ -144,4 +144,6 @@ public class CodeUtil {
 
     public static CodeExecutionResult executeCodeLocally(String language, String workDir, String filename,
             int timeout) {
-        // set up the comma
+        // set up the command based on language
+        String executable = getExecutableForLanguage(language);
+        C

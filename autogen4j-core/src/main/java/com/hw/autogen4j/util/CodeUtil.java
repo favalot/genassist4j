@@ -147,4 +147,7 @@ public class CodeUtil {
         // set up the command based on language
         String executable = getExecutableForLanguage(language);
         CommandLine commandLine = new CommandLine(executable);
-        commandLine.addArgument(filename
+        commandLine.addArgument(filename);
+
+        // set up the execution environment
+        DefaultExecutor executor = new Defa

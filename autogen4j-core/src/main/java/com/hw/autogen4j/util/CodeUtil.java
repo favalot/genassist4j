@@ -146,4 +146,5 @@ public class CodeUtil {
             int timeout) {
         // set up the command based on language
         String executable = getExecutableForLanguage(language);
-        C
+        CommandLine commandLine = new CommandLine(executable);
+        commandLine.addArgument(filename

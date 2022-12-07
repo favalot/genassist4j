@@ -150,4 +150,6 @@ public class CodeUtil {
         commandLine.addArgument(filename);
 
         // set up the execution environment
-        DefaultExecutor executor = new Defa
+        DefaultExecutor executor = new DefaultExecutor();
+        executor.setWorkingDirectory(new File(workDir));
+        executor.setExitV

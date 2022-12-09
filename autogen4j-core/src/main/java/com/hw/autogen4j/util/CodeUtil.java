@@ -152,4 +152,7 @@ public class CodeUtil {
         // set up the execution environment
         DefaultExecutor executor = new DefaultExecutor();
         executor.setWorkingDirectory(new File(workDir));
-        executor.setExitV
+        executor.setExitValue(0);
+
+        // set up the streams for the output of the subprocess
+        ByteArrayOutputStre

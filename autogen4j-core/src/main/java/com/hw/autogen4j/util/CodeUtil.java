@@ -155,4 +155,5 @@ public class CodeUtil {
         executor.setExitValue(0);
 
         // set up the streams for the output of the subprocess
-        ByteArrayOutputStre
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        ByteArrayOutputStream error

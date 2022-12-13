@@ -157,4 +157,5 @@ public class CodeUtil {
         // set up the streams for the output of the subprocess
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         ByteArrayOutputStream errorStream = new ByteArrayOutputStream();
-        PumpStreamHandler streamHandler = 
+        PumpStreamHandler streamHandler = new PumpStreamHandler(outputStream, errorStream);
+        executor.set

@@ -158,4 +158,6 @@ public class CodeUtil {
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         ByteArrayOutputStream errorStream = new ByteArrayOutputStream();
         PumpStreamHandler streamHandler = new PumpStreamHandler(outputStream, errorStream);
-        executor.set
+        executor.setStreamHandler(streamHandler);
+
+        // set up a watchdog to terminate the process if it exc

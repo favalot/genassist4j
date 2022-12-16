@@ -160,4 +160,5 @@ public class CodeUtil {
         PumpStreamHandler streamHandler = new PumpStreamHandler(outputStream, errorStream);
         executor.setStreamHandler(streamHandler);
 
-        // set up a watchdog to terminate the process if it exc
+        // set up a watchdog to terminate the process if it exceeds the timeout
+        ExecuteWatchdog watchdog = new ExecuteWatchdog(TimeUnit.SECO

@@ -161,4 +161,8 @@ public class CodeUtil {
         executor.setStreamHandler(streamHandler);
 
         // set up a watchdog to terminate the process if it exceeds the timeout
-        ExecuteWatchdog watchdog = new ExecuteWatchdog(TimeUnit.SECO
+        ExecuteWatchdog watchdog = new ExecuteWatchdog(TimeUnit.SECONDS.toMillis(timeout));
+        executor.setWatchdog(watchdog);
+
+        try {
+            

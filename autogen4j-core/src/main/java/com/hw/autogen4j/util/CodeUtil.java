@@ -165,4 +165,6 @@ public class CodeUtil {
         executor.setWatchdog(watchdog);
 
         try {
-            
+            // execute the command
+            executor.execute(commandLine);
+            // process com

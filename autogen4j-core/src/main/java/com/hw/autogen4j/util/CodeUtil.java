@@ -167,4 +167,5 @@ public class CodeUtil {
         try {
             // execute the command
             executor.execute(commandLine);
-            // process com
+            // process completed before the watchdog terminated it
+            String output = outputStream.toString

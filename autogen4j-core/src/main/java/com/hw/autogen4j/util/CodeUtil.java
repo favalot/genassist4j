@@ -168,4 +168,6 @@ public class CodeUtil {
             // execute the command
             executor.execute(commandLine);
             // process completed before the watchdog terminated it
-            String output = outputStream.toString
+            String output = outputStream.toString();
+            return new CodeExecutionResult(0, output.trim());
+        } catch

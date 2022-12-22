@@ -170,4 +170,5 @@ public class CodeUtil {
             // process completed before the watchdog terminated it
             String output = outputStream.toString();
             return new CodeExecutionResult(0, output.trim());
-        } catch
+        } catch (ExecuteException e) {
+            // process finished with an exit value (poss

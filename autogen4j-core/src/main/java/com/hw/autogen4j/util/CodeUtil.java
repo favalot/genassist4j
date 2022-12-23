@@ -171,4 +171,6 @@ public class CodeUtil {
             String output = outputStream.toString();
             return new CodeExecutionResult(0, output.trim());
         } catch (ExecuteException e) {
-            // process finished with an exit value (poss
+            // process finished with an exit value (possibly non-zero)
+            String errorOutput = errorStream.toString()
+                    .r

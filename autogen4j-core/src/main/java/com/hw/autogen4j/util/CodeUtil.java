@@ -173,4 +173,6 @@ public class CodeUtil {
         } catch (ExecuteException e) {
             // process finished with an exit value (possibly non-zero)
             String errorOutput = errorStream.toString()
-                    .r
+                    .replace(Path.of(workDir).toAbsolutePath() + File.separator, "");
+
+            return new CodeExe

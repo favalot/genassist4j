@@ -177,4 +177,5 @@ public class CodeUtil {
 
             return new CodeExecutionResult(e.getExitValue(), errorOutput.trim());
         } catch (IOException e) {
-            // returns 
+            // returns a special result if the process was killed by the watchdog
+            throw new Autogen4jException("E

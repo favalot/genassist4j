@@ -25,4 +25,9 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 
 /**
- * @
+ * @author HamaWhite
+ */
+public class FileUtil {
+
+    private FileUtil() {
+        throw n

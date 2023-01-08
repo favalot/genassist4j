@@ -30,4 +30,8 @@ import java.nio.file.Path;
 public class FileUtil {
 
     private FileUtil() {
-        throw n
+        throw new IllegalStateException("Utility class");
+    }
+
+    /**
+     * Writes the given code string to a

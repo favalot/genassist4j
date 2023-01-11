@@ -34,4 +34,5 @@ public class FileUtil {
     }
 
     /**
-     * Writes the given code string to a
+     * Writes the given code string to a file specified by the filename.
+     * The file is created in the provided working d

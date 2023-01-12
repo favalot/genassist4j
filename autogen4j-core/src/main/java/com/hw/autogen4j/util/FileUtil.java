@@ -35,4 +35,5 @@ public class FileUtil {
 
     /**
      * Writes the given code string to a file specified by the filename.
-     * The file is created in the provided working d
+     * The file is created in the provided working directory.
+     * Intermediate directories in the path will be created if they do not exis

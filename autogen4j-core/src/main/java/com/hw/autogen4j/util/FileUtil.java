@@ -38,4 +38,6 @@ public class FileUtil {
      * The file is created in the provided working directory.
      * Intermediate directories in the path will be created if they do not exist.
      *
-     * @param workDir  The working directory where the file needs 
+     * @param workDir  The working directory where the file needs to be created.
+     * @param filename The name of the file to write the code to.
+     * @param code     The cod

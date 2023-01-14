@@ -40,4 +40,6 @@ public class FileUtil {
      *
      * @param workDir  The working directory where the file needs to be created.
      * @param filename The name of the file to write the code to.
-     * @param code     The cod
+     * @param code     The code to write to the file. Must not be null.
+     */
+    @SneakyThrows(IOException.class)

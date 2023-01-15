@@ -43,3 +43,5 @@ public class FileUtil {
      * @param code     The code to write to the file. Must not be null.
      */
     @SneakyThrows(IOException.class)
+    public static void writeCodeToFile(String workDir, String filename, String code) {
+        if 

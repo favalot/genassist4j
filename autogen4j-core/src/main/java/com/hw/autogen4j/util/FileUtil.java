@@ -45,4 +45,7 @@ public class FileUtil {
     @SneakyThrows(IOException.class)
     public static void writeCodeToFile(String workDir, String filename, String code) {
         if (code == null) {
-            throw new IllegalArgumentException("Code must not be nul
+            throw new IllegalArgumentException("Code must not be null");
+        }
+        Path filepath = Path.of(workDir, filename);
+        // ensure the parent di

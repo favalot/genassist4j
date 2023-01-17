@@ -48,4 +48,6 @@ public class FileUtil {
             throw new IllegalArgumentException("Code must not be null");
         }
         Path filepath = Path.of(workDir, filename);
-        // ensure the parent di
+        // ensure the parent directory exists
+        Path fileDir = filepath.getParent();
+        if (f

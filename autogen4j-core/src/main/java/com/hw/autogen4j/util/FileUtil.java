@@ -50,4 +50,5 @@ public class FileUtil {
         Path filepath = Path.of(workDir, filename);
         // ensure the parent directory exists
         Path fileDir = filepath.getParent();
-        if (f
+        if (fileDir != null && !Files.exists(fileDir)) {
+            Files.createDirectories(fileDir

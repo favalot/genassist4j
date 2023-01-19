@@ -51,4 +51,7 @@ public class FileUtil {
         // ensure the parent directory exists
         Path fileDir = filepath.getParent();
         if (fileDir != null && !Files.exists(fileDir)) {
-            Files.createDirectories(fileDir
+            Files.createDirectories(fileDir);
+        }
+        // write the code to the file
+        Files.writeString(filepath, 

@@ -54,4 +54,8 @@ public class FileUtil {
             Files.createDirectories(fileDir);
         }
         // write the code to the file
-        Files.writeString(filepath, 
+        Files.writeString(filepath, code);
+    }
+
+    /**
+     * Deletes the file specified by the filename from the provided 

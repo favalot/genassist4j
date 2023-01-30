@@ -60,4 +60,7 @@ public class FileUtil {
     /**
      * Deletes the file specified by the filename from the provided working directory.
      *
-     * @param workDir  The working directory where the file to be deleted is l
+     * @param workDir  The working directory where the file to be deleted is located.
+     * @param filename The name of the file to be deleted.
+     */
+    @SneakyThr

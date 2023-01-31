@@ -63,4 +63,6 @@ public class FileUtil {
      * @param workDir  The working directory where the file to be deleted is located.
      * @param filename The name of the file to be deleted.
      */
-    @SneakyThr
+    @SneakyThrows(IOException.class)
+    public static void deleteFile(String workDir, String filename) {
+ 

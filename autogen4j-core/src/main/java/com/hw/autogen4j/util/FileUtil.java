@@ -65,4 +65,5 @@ public class FileUtil {
      */
     @SneakyThrows(IOException.class)
     public static void deleteFile(String workDir, String filename) {
- 
+        Path filepath = Path.of(workDir, filename);
+        Files.deleteIfExists(file

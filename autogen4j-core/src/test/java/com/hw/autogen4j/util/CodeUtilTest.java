@@ -19,3 +19,6 @@
 package com.hw.autogen4j.util;
 
 import com.hw.autogen4j.entity.CodeExecutionConfig;
+import com.hw.autogen4j.entity.CodeExecutionResult;
+
+import org.junit.jupiter.api.Be

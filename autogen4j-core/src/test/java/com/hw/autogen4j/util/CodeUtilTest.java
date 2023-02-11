@@ -28,4 +28,9 @@ import org.junit.jupiter.api.io.TempDir;
 import java.nio.file.Path;
 
 import static com.hw.autogen4j.util.CodeUtil.executeCode;
-import sta
+import static org.assertj.core.api.Assertions.assertThat;
+
+/**
+ * @author HamaWhite
+ */
+class Code

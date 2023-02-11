@@ -24,3 +24,8 @@ import com.hw.autogen4j.entity.CodeExecutionResult;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.io.TempDir;
+
+import java.nio.file.Path;
+
+import static com.hw.autogen4j.util.CodeUtil.executeCode;
+import sta

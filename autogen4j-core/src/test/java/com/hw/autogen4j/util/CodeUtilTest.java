@@ -33,4 +33,12 @@ import static org.assertj.core.api.Assertions.assertThat;
 /**
  * @author HamaWhite
  */
-class Code
+class CodeUtilTest {
+
+    private CodeExecutionConfig config;
+
+    @TempDir
+    Path tempDir;
+
+    @BeforeEach
+    void setUp()

@@ -41,4 +41,6 @@ class CodeUtilTest {
     Path tempDir;
 
     @BeforeEach
-    void setUp()
+    void setUp() {
+        // set up the configuration for each test
+        config = Co

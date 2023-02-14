@@ -43,4 +43,8 @@ class CodeUtilTest {
     @BeforeEach
     void setUp() {
         // set up the configuration for each test
-        config = Co
+        config = CodeExecutionConfig.builder().workDir(tempDir.toString()).build();
+    }
+
+    @Test
+    voi

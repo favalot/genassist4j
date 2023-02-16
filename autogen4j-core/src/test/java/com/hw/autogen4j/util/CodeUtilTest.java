@@ -49,4 +49,8 @@ class CodeUtilTest {
     @Test
     void testExecuteShellSuccessfully() {
         String code = """
-                #!/bin
+                #!/bin/sh
+                echo 'Hello, LLM!'
+                """;
+
+        CodeExecutionResult r

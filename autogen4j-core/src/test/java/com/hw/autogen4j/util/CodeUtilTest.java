@@ -47,4 +47,6 @@ class CodeUtilTest {
     }
 
     @Test
-    voi
+    void testExecuteShellSuccessfully() {
+        String code = """
+                #!/bin

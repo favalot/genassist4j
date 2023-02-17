@@ -53,4 +53,6 @@ class CodeUtilTest {
                 echo 'Hello, LLM!'
                 """;
 
-        CodeExecutionResult r
+        CodeExecutionResult result = executeCode("shell", code, config);
+        assertThat(result.exitCode()).isZero();
+   

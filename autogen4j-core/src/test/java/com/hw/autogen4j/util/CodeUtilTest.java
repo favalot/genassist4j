@@ -55,4 +55,8 @@ class CodeUtilTest {
 
         CodeExecutionResult result = executeCode("shell", code, config);
         assertThat(result.exitCode()).isZero();
-   
+        assertThat(result.logs()).contains("Hello, LLM!");
+    }
+
+    @Test
+    void testExecutePyth

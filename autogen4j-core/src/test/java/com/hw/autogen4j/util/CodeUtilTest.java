@@ -59,4 +59,7 @@ class CodeUtilTest {
     }
 
     @Test
-    void testExecutePyth
+    void testExecutePythonSuccessfully() {
+        String code = """
+                print('Hello, Python!')
+   

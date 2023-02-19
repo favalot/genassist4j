@@ -62,4 +62,6 @@ class CodeUtilTest {
     void testExecutePythonSuccessfully() {
         String code = """
                 print('Hello, Python!')
-   
+                """;
+
+        CodeExecutionResult result = executeCode("python", code, conf

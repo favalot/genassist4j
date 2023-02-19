@@ -64,4 +64,6 @@ class CodeUtilTest {
                 print('Hello, Python!')
                 """;
 
-        CodeExecutionResult result = executeCode("python", code, conf
+        CodeExecutionResult result = executeCode("python", code, config);
+        assertThat(result.exitCode()).isZero();
+        assertThat(result.logs()).contai

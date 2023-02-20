@@ -71,4 +71,7 @@ class CodeUtilTest {
 
     @Test
     void testHandleShellWithError() {
-       
+        String code = """
+                #!/bin/sh
+                exit 1
+                """

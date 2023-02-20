@@ -66,4 +66,9 @@ class CodeUtilTest {
 
         CodeExecutionResult result = executeCode("python", code, config);
         assertThat(result.exitCode()).isZero();
-        assertThat(result.logs()).contai
+        assertThat(result.logs()).contains("Hello, Python!");
+    }
+
+    @Test
+    void testHandleShellWithError() {
+       

@@ -74,4 +74,7 @@ class CodeUtilTest {
         String code = """
                 #!/bin/sh
                 exit 1
-                """
+                """;
+
+        CodeExecutionResult result = executeCode("shell", code, config);
+        assertThat(result.

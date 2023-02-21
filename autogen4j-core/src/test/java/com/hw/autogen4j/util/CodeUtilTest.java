@@ -77,4 +77,9 @@ class CodeUtilTest {
                 """;
 
         CodeExecutionResult result = executeCode("shell", code, config);
-        assertThat(result.
+        assertThat(result.exitCode()).isNotZero();
+        assertThat(result.logs()).isEmpty();
+    }
+
+    @Test
+    void testHan

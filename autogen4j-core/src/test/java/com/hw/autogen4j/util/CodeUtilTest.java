@@ -82,4 +82,6 @@ class CodeUtilTest {
     }
 
     @Test
-    void testHan
+    void testHandlePythonWithError() {
+        String code = """
+                raise Exception('Test Exception

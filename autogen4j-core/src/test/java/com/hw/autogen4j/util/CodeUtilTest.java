@@ -84,4 +84,7 @@ class CodeUtilTest {
     @Test
     void testHandlePythonWithError() {
         String code = """
-                raise Exception('Test Exception
+                raise Exception('Test Exception')
+                """;
+
+        CodeExecutionResult result = executeCode("python", code, conf

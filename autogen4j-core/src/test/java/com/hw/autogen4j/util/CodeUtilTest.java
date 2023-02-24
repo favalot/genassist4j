@@ -87,4 +87,6 @@ class CodeUtilTest {
                 raise Exception('Test Exception')
                 """;
 
-        CodeExecutionResult result = executeCode("python", code, conf
+        CodeExecutionResult result = executeCode("python", code, config);
+        assertThat(result.exitCode()).isNotZero();
+        assertThat(result.logs()).contai

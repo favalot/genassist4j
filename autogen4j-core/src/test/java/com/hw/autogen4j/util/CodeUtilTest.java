@@ -89,4 +89,9 @@ class CodeUtilTest {
 
         CodeExecutionResult result = executeCode("python", code, config);
         assertThat(result.exitCode()).isNotZero();
-        assertThat(result.logs()).contai
+        assertThat(result.logs()).contains("Test Exception");
+    }
+
+    @Test
+    void testHandleExecutionTimeout() {
+       

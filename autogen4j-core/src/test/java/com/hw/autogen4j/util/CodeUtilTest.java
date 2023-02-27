@@ -94,4 +94,7 @@ class CodeUtilTest {
 
     @Test
     void testHandleExecutionTimeout() {
-       
+        String code = """
+                #!/bin/sh
+                sleep 10
+                """

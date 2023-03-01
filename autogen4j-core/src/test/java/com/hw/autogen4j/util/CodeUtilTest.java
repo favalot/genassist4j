@@ -100,4 +100,7 @@ class CodeUtilTest {
                 """;
 
         config.setTimeout(1);
-        CodeExecutionResult result = executeCode("shell", code, c
+        CodeExecutionResult result = executeCode("shell", code, config);
+        assertThat(result.exitCode()).isNotZero();
+    }
+}

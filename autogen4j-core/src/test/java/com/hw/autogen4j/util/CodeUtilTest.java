@@ -97,4 +97,7 @@ class CodeUtilTest {
         String code = """
                 #!/bin/sh
                 sleep 10
-                """
+                """;
+
+        config.setTimeout(1);
+        CodeExecutionResult result = executeCode("shell", code, c

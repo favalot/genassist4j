@@ -12,4 +12,6 @@
 
     <dependencies>
         <dependency>
-            <groupId>io.github.hamawhitegg</gro
+            <groupId>io.github.hamawhitegg</groupId>
+            <artifactId>autogen4j-core</artifactId>
+            <version>${project.version}<

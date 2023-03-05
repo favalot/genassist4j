@@ -10,3 +10,6 @@
 
     <artifactId>autogen4j-example</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>io.github.hamawhitegg</gro

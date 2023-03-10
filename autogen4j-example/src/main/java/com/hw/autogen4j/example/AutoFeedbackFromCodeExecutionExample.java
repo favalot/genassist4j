@@ -44,3 +44,21 @@ public class AutoFeedbackFromCodeExecutionExample {
         var codeExecutionConfig = CodeExecutionConfig.builder()
                 .workDir("data/coding")
                 .build();
+        // create a UserProxyAgent instance named "user_proxy"
+        var userProxy = UserProxyAgent.builder()
+                .name("user_proxy")
+                .humanInputMode(NEVER)
+                .maxConsecutiveAutoReply(10)
+                .isTerminationMsg(e -> e.getContent().strip().endsWith("TERMINATE"))
+                .codeExecutionConfig(codeExecutionConfig)
+                .build();
+
+        // the assistant receives a message from the user_proxy, which contains the task description
+        userProxy.initiateChat(assistant,
+                "What date is today? Compare the year-to-date gain for META and TESLA.");
+
+        // followup of the previous question
+        userProxy.send(assistant,
+                "Plot a chart of their stock price change YTD and save to stock_price_ytd.png.");
+    }
+}

@@ -29,4 +29,5 @@ import java.util.List;
 import static com.hw.autogen4j.entity.HumanInputMode.TERMINATE;
 
 /**
- * AutoGen offers conversable agents powered by LLM, tool or human, which can be us
+ * AutoGen offers conversable agents powered by LLM, tool or human, which can be used to perform tasks collectively
+ * via automated chat. This framework allows tool use an

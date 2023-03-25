@@ -32,4 +32,6 @@ import static com.hw.autogen4j.entity.HumanInputMode.TERMINATE;
  * AutoGen offers conversable agents powered by LLM, tool or human, which can be used to perform tasks collectively
  * via automated chat. This framework allows tool use and human participation through multi-agent conversation.
  * <p>
- * <a href="https://github.com/mi
+ * <a href="https://github.com/microsoft/autogen/blob/main/notebook/agentchat_groupchat.ipynb">agentchat_groupchat</a>
+ *
+ * @author HamaWhite

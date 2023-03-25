@@ -35,3 +35,9 @@ import static com.hw.autogen4j.entity.HumanInputMode.TERMINATE;
  * <a href="https://github.com/microsoft/autogen/blob/main/notebook/agentchat_groupchat.ipynb">agentchat_groupchat</a>
  *
  * @author HamaWhite
+ */
+public class GroupChatExample {
+
+    public static void main(String[] args) {
+
+        var codeExe

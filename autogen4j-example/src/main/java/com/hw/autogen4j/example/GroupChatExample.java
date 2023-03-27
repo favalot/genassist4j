@@ -40,4 +40,6 @@ public class GroupChatExample {
 
     public static void main(String[] args) {
 
-        var codeExe
+        var codeExecutionConfig = CodeExecutionConfig.builder()
+                .workDir("data/group_chat")
+        

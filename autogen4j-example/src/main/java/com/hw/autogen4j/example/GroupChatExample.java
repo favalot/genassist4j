@@ -42,4 +42,7 @@ public class GroupChatExample {
 
         var codeExecutionConfig = CodeExecutionConfig.builder()
                 .workDir("data/group_chat")
-        
+                .lastMessagesNumber(2)
+                .build();
+
+        // create a 

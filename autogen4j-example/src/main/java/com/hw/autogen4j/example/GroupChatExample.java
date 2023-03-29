@@ -46,4 +46,7 @@ public class GroupChatExample {
                 .build();
 
         // create a UserProxyAgent instance named "user_proxy"
-        var userProxy = UserProxyAgent.builder(
+        var userProxy = UserProxyAgent.builder()
+                .name("user_proxy")
+                .systemMessage("A human admin.")
+ 

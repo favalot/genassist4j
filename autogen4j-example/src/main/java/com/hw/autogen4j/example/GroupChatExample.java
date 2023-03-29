@@ -45,4 +45,5 @@ public class GroupChatExample {
                 .lastMessagesNumber(2)
                 .build();
 
-        // create a 
+        // create a UserProxyAgent instance named "user_proxy"
+        var userProxy = UserProxyAgent.builder(

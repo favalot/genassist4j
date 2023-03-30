@@ -49,4 +49,5 @@ public class GroupChatExample {
         var userProxy = UserProxyAgent.builder()
                 .name("user_proxy")
                 .systemMessage("A human admin.")
- 
+                .humanInputMode(TERMINATE)
+                .codeExecutionConfig(codeExe

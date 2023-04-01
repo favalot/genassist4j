@@ -54,3 +54,6 @@ public class GroupChatExample {
                 .build();
 
         // create an AssistantAgent named "coder"
+        var coder = AssistantAgent.builder()
+                .name("coder")
+             

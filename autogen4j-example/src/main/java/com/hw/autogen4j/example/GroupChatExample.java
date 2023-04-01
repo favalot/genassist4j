@@ -50,4 +50,7 @@ public class GroupChatExample {
                 .name("user_proxy")
                 .systemMessage("A human admin.")
                 .humanInputMode(TERMINATE)
-                .codeExecutionConfig(codeExe
+                .codeExecutionConfig(codeExecutionConfig)
+                .build();
+
+        // create an AssistantAgent named "coder"

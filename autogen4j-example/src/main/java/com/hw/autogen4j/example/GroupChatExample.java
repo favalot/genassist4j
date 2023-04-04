@@ -61,4 +61,7 @@ public class GroupChatExample {
         // create an AssistantAgent named "pm"
         var pm = AssistantAgent.builder()
                 .name("product_manager")
-                .systemMessage
+                .systemMessage("Creative in software product ideas.")
+                .build();
+
+        var groupChat =

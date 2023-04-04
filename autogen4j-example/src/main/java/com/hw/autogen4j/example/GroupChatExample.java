@@ -64,4 +64,6 @@ public class GroupChatExample {
                 .systemMessage("Creative in software product ideas.")
                 .build();
 
-        var groupChat =
+        var groupChat = GroupChat.builder()
+                .agents(List.of(userProxy, coder, pm))
+   

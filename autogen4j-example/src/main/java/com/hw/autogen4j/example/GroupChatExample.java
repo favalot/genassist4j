@@ -66,4 +66,7 @@ public class GroupChatExample {
 
         var groupChat = GroupChat.builder()
                 .agents(List.of(userProxy, coder, pm))
-   
+                .maxRound(12)
+                .build();
+
+        // create an GroupChatManage

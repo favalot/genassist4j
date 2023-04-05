@@ -69,4 +69,6 @@ public class GroupChatExample {
                 .maxRound(12)
                 .build();
 
-        // create an GroupChatManage
+        // create an GroupChatManager named "manager"
+        var manager = GroupChatManager.builder()
+                .

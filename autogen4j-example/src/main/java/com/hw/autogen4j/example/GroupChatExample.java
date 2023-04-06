@@ -71,4 +71,7 @@ public class GroupChatExample {
 
         // create an GroupChatManager named "manager"
         var manager = GroupChatManager.builder()
-                .
+                .groupChat(groupChat)
+                .build();
+
+        userProxy.initiateCha

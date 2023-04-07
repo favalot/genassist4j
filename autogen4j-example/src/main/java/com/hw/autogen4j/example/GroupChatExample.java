@@ -74,4 +74,5 @@ public class GroupChatExample {
                 .groupChat(groupChat)
                 .build();
 
-        userProxy.initiateCha
+        userProxy.initiateChat(manager,
+                "Find a latest paper about gpt-4 on arxiv and find its potent

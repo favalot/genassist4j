@@ -23,3 +23,11 @@ package com.hw.autogen4j.example.util;
  * @author HamaWhite
  */
 public class PrintUtil {
+
+    private PrintUtil() {
+    }
+
+    public static void println(Object obj) {
+        System.out.println(obj);
+    }
+}

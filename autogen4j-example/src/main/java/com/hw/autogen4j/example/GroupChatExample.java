@@ -75,4 +75,8 @@ public class GroupChatExample {
                 .build();
 
         userProxy.initiateChat(manager,
-                "Find a latest paper about gpt-4 on arxiv and find its potent
+                "Find a latest paper about gpt-4 on arxiv and find its potential applications in software.");
+        // type exit to terminate the chat
+    }
+
+}

@@ -185,3 +185,55 @@ current_year = datetime.now().year
 today = date.today()
 
 # Get the stock data for the current year
+meta_data = yf.download('META', start=f'{current_year}-01-01', end=today)
+tesla_data = yf.download('TSLA', start=f'{current_year}-01-01', end=today)
+
+# Normalize the closing prices to start at 100
+meta_data['Normalized'] = meta_data['Close'] / meta_data['Close'][0] * 100
+tesla_data['Normalized'] = tesla_data['Close'] / tesla_data['Close'][0] * 100
+
+# Create a new figure
+plt.figure(figsize=(14, 7))
+
+# Plot the normalized closing prices
+plt.plot(meta_data['Normalized'], label='META')
+plt.plot(tesla_data['Normalized'], label='TESLA')
+
+# Add title and labels
+plt.title('Year-to-Date Stock Price Change for META and TESLA')
+plt.xlabel('Date')
+plt.ylabel('Normalized Closing Price')
+
+# Add a legend
+plt.legend()
+
+# Save the figure
+plt.savefig('stock_price_ytd.png')
+```
+
+This code will create a line chart showing the normalized closing prices for META and TESLA from the beginning of the current year to today. The prices are normalized to start at 100 on the first trading day of the year, which allows us to easily compare the price changes over time. The chart is then saved to a file named 'stock_price_ytd.png'.
+
+--------------------------------------------------------------------------------
+
+>>>>>>>> EXECUTING CODE BLOCK 1 (inferred language is python)...
+user_proxy (to assistant):
+
+exitcode: 0 (execution succeeded})
+Code output:
+[*********************100%%**********************]  1 of 1 completed
+[*********************100%%**********************]  1 of 1 completed
+
+--------------------------------------------------------------------------------
+assistant (to user_proxy):
+
+Great! The code executed successfully and the chart has been saved as 'stock_price_ytd.png'.
+
+This chart shows the normalized closing prices for META and TESLA from the beginning of the current year to today. The prices are normalized to start at 100 on the first trading day of the year, which allows us to easily compare the price changes over time.
+
+Please check the file 'stock_price_ytd.png' in your current directory to view the chart.
+
+TERMINATE
+
+--------------------------------------------------------------------------------
+
+Process finished with exit code 0

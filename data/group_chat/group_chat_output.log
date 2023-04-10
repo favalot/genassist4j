@@ -2,4 +2,7 @@ user_proxy (to chat_manager):
 
 Find a latest paper about gpt-4 on arxiv and find its potential applications in software.
 
-------------------
+--------------------------------------------------------------------------------
+coder (to chat_manager):
+
+To find t

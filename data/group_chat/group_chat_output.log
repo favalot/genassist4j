@@ -5,4 +5,6 @@ Find a latest paper about gpt-4 on arxiv and find its potential applications in 
 --------------------------------------------------------------------------------
 coder (to chat_manager):
 
-To find the latest paper about GPT-4 on arXiv, we can use the arXiv API. The API allows us to search for papers based on keywords. We will use the requests and feedparser libraries in Python t
+To find the latest paper about GPT-4 on arXiv, we can use the arXiv API. The API allows us to search for papers based on keywords. We will use the requests and feedparser libraries in Python to send a GET request to the API and parse the returned RSS feed.
+
+Here is the Python 

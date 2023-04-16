@@ -13,4 +13,8 @@ Here is the Python code to do this:
 import requests
 import feedparser
 
-# Define the base URL for the 
+# Define the base URL for the arXiv API
+base_url = 'http://export.arxiv.org/api/query?'
+
+# Define the search parameters
+search_params 

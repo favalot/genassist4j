@@ -23,4 +23,7 @@ search_params = 'search_query=all:gpt-4&start=0&max_results=1'
 response = requests.get(base_url + search_params)
 
 # Parse the returned RSS feed
-feed = feedparser.par
+feed = feedparser.parse(response.content)
+
+# Print the title and summary of the latest paper about GPT-4
+for entry in

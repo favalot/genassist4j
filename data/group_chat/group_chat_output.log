@@ -26,4 +26,9 @@ response = requests.get(base_url + search_params)
 feed = feedparser.parse(response.content)
 
 # Print the title and summary of the latest paper about GPT-4
-for entry in
+for entry in feed.entries:
+    print('Title: ', entry.title)
+    print('Summary: ', entry.summary)
+```
+
+This code will prin

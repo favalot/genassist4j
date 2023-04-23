@@ -33,4 +33,4 @@ for entry in feed.entries:
 
 This code will print the title and summary of the latest paper about GPT-4 on arXiv.
 
-After we have the paper, we can m
+After we have the paper, we can manually read it to find its potential applications in software. This step requires language skills and 

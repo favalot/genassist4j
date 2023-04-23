@@ -31,4 +31,6 @@ for entry in feed.entries:
     print('Summary: ', entry.summary)
 ```
 
-This code will prin
+This code will print the title and summary of the latest paper about GPT-4 on arXiv.
+
+After we have the paper, we can m

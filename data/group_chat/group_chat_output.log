@@ -42,4 +42,8 @@ Please run the above Python code to find the latest paper about GPT-4 on arXiv.
 >>>>>>>> USING AUTO REPLY...
 
 >>>>>>>> EXECUTING CODE BLOCK 1 (inferred language is python)...
-user
+user_proxy (to chat_manager):
+
+exitcode: 0 (execution succeeded)
+Code output:
+Title:  Can LL

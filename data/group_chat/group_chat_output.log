@@ -60,4 +60,5 @@ GPT-4 and traditional AI tools are conducted to examine their diagnostic
 accuracy in a clinical setting. Experimental results on two real clinical
 datasets show that, although LLMs like GPT-4 demonstrate potential for future
 advancements in dementia diagnosis, they currently do not surpass the
-performance of tradit
+performance of traditional AI tools. The interpretability and faithfulness of
+GPT-4 are also evaluated by 

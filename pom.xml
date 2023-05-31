@@ -5,4 +5,7 @@
 
     <groupId>io.github.hamawhitegg</groupId>
     <artifactId>autogen4j</artifactId>
-    <version>0.1.0-SNAPSHOT</ve
+    <version>0.1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>autogen4j</name>
+    <description>Java v

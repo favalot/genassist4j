@@ -10,4 +10,7 @@
     <name>autogen4j</name>
     <description>Java version of Microsoft AutoGen, Enable Next-Gen Large Language Model Applications</description>
 
-    <modu
+    <modules>
+        <module>autogen4j-core</module>
+        <module>autogen4j-example</module>
+    </

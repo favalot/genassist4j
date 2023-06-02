@@ -13,4 +13,9 @@
     <modules>
         <module>autogen4j-core</module>
         <module>autogen4j-example</module>
-    </
+    </modules>
+
+    <properties>
+        <openai.version>0.2.2</openai.version>
+
+        <

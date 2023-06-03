@@ -20,4 +20,5 @@
 
         <junit.version>5.9.3</junit.version>
         <junit-suite.version>1.10.0</junit-suite.version>
-        <a
+        <assertj.version>3.24.2</assertj.version>
+        <lombok.version>1.18.28</lombok.v

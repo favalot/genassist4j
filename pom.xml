@@ -18,4 +18,6 @@
     <properties>
         <openai.version>0.2.2</openai.version>
 
-        <
+        <junit.version>5.9.3</junit.version>
+        <junit-suite.version>1.10.0</junit-suite.version>
+        <a

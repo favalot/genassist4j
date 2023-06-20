@@ -39,4 +39,5 @@
         <nexus-staging-maven-plugin.executions>true</nexus-staging-maven-plugin.executions>
 
         <target.java.version>17</target.java.version>
-        <m
+        <maven.compiler.source>${target.java.version}</maven.compiler.source>
+      

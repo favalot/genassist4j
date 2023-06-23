@@ -49,4 +49,8 @@
             <dependency>
                 <groupId>io.github.hamawhitegg</groupId>
                 <artifactId>openai-client</artifactId>
+                <version>${openai.version}</version>
+            </dependency>
+
+            <dependency>
               

@@ -72,4 +72,8 @@
 
             <dependency>
                 <groupId>commons-codec</groupId>
-                <artifactId>commons-codec</artifac
+                <artifactId>commons-codec</artifactId>
+                <version>${commons-codec.version}</version>
+            </dependency>
+
+     

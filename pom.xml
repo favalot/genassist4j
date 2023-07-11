@@ -87,4 +87,8 @@
                 <groupId>org.junit.jupiter</groupId>
                 <artifactId>junit-jupiter-api</artifactId>
                 <version>${junit.version}</version>
-                <scope>te
+                <scope>test</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.

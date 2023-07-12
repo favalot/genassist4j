@@ -91,4 +91,5 @@
             </dependency>
 
             <dependency>
-                <groupId>org.
+                <groupId>org.junit.platform</groupId>
+                <artifactId>junit-platform-suite-api</artifa

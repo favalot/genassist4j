@@ -92,4 +92,6 @@
 
             <dependency>
                 <groupId>org.junit.platform</groupId>
-                <artifactId>junit-platform-suite-api</artifa
+                <artifactId>junit-platform-suite-api</artifactId>
+                <version>${junit-suite.version}</version>
+                <scope>

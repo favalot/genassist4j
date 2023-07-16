@@ -104,4 +104,6 @@
                 <scope>test</scope>
             </dependency>
 
- 
+            <dependency>
+                <groupId>org.assertj</groupId>
+                <arti

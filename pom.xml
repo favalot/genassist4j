@@ -106,4 +106,6 @@
 
             <dependency>
                 <groupId>org.assertj</groupId>
-                <arti
+                <artifactId>assertj-core</artifactId>
+                <version>${assertj.version}</version>
+          

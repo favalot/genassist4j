@@ -111,4 +111,9 @@
                 <scope>test</scope>
             </dependency>
         </dependencies>
-    </dependencyMan
+    </dependencyManagement>
+
+    <build>
+        <pluginManagement>
+            <plugins>
+                <pl

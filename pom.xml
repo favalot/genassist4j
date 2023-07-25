@@ -126,4 +126,6 @@
                     </configuration>
                 </plugin>
 
-     
+                <plugin>
+                    <groupId>com.diffplug.spotless</groupId>
+   

@@ -131,4 +131,6 @@
                     <artifactId>spotless-maven-plugin</artifactId>
                     <version>${spotless-maven-plugin.version}</version>
                     <configuration>
-              
+                        <java>
+                            <eclipse>
+                                <fi

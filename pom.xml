@@ -135,4 +135,5 @@
                             <eclipse>
                                 <file>style/spotless-formatter.xml</file>
                             </eclipse>
-                            <
+                            <licenseHeader>
+                                <file>style/license-header

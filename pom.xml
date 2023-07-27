@@ -133,4 +133,6 @@
                     <configuration>
                         <java>
                             <eclipse>
-                                <fi
+                                <file>style/spotless-formatter.xml</file>
+                            </eclipse>
+                            <

@@ -141,4 +141,5 @@
 
                             <!-- \# refers to the static imports -->
                             <importOrder>
-      
+                                <order>com,org,,javax,java,scala,\#</order>
+                            </i

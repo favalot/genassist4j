@@ -139,4 +139,6 @@
                                 <file>style/license-header</file>
                             </licenseHeader>
 
-                            <!-
+                            <!-- \# refers to the static imports -->
+                            <importOrder>
+      

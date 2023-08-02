@@ -148,4 +148,5 @@
                         </java>
                         <pom>
                             <sortPom>
-                       
+                                <encoding>UTF-8</encoding>
+                                <nrOfIndentSpace>4</nrOfIndentSpace

@@ -151,4 +151,5 @@
                                 <encoding>UTF-8</encoding>
                                 <nrOfIndentSpace>4</nrOfIndentSpace>
                                 <keepBlankLines>true</keepBlankLines>
-                                <in
+                                <indentBlankLines>false</indentBlankLines>
+                            

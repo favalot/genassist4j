@@ -154,4 +154,6 @@
                                 <indentBlankLines>false</indentBlankLines>
                                 <indentSchemaLocation>true</indentSchemaLocation>
                                 <spaceBeforeCloseEmptyElement>true</spaceBeforeCloseEmptyElement>
-                                <sortModul
+                                <sortModules>false</sortModules>
+                                <sortExecutions>false</sortExecutions>
+     

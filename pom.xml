@@ -162,4 +162,7 @@
                             </sortPom>
                         </pom>
                     </configuration>
-                  
+                    <executions>
+                        <execution>
+                            <goals>
+     

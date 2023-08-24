@@ -181,4 +181,6 @@
                     <artifactId>nexus-staging-maven-plugin</artifactId>
                     <version>${nexus-staging-maven-plugin.version}</version>
                     <extensions>${nexus-staging-maven-plugin.executions}</extensions>
- 
+                    <configuration>
+                        <serverId>ossrh</serverId>
+           

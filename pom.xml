@@ -183,4 +183,5 @@
                     <extensions>${nexus-staging-maven-plugin.executions}</extensions>
                     <configuration>
                         <serverId>ossrh</serverId>
-           
+                        <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
+                        <a

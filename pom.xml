@@ -186,4 +186,6 @@
                         <nexusUrl>https://s01.oss.sonatype.org/</nexusUrl>
                         <autoReleaseAfterClose>true</autoReleaseAfterClose>
                     </configuration>
-       
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.mave

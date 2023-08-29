@@ -193,4 +193,6 @@
                     <version>${maven-source-plugin.version}</version>
                     <executions>
                         <execution>
-                            <id>at
+                            <id>attach-sources</id>
+                            <goals>
+                            

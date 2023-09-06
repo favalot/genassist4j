@@ -205,4 +205,6 @@
                     <artifactId>maven-javadoc-plugin</artifactId>
                     <version>${maven-javadoc-plugin.version}</version>
                     <configuration>
-                     
+                        <locale>en</locale>
+                        <encoding>UTF-8</encoding>
+         

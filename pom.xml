@@ -208,4 +208,6 @@
                         <locale>en</locale>
                         <encoding>UTF-8</encoding>
                         <docencoding>UTF-8</docencoding>
-                        <doclint>none</
+                        <doclint>none</doclint>
+                        <additionalJOptions>
+                            <additio

@@ -211,4 +211,5 @@
                         <doclint>none</doclint>
                         <additionalJOptions>
                             <additionalJOption>-J-Duser.language=en</additionalJOption>
-                            <additiona
+                            <additionalJOption>-J-Duser.region=US</additionalJOption>
+                        </additiona

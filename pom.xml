@@ -212,4 +212,7 @@
                         <additionalJOptions>
                             <additionalJOption>-J-Duser.language=en</additionalJOption>
                             <additionalJOption>-J-Duser.region=US</additionalJOption>
-                        </additiona
+                        </additionalJOptions>
+                    </configuration>
+                    <executions>
+            

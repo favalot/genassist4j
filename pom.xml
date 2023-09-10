@@ -215,4 +215,6 @@
                         </additionalJOptions>
                     </configuration>
                     <executions>
-            
+                        <execution>
+                            <id>attach-javadocs</id>
+                

@@ -220,4 +220,5 @@
                             <goals>
                                 <goal>jar</goal>
                             </goals>
- 
+                            <configuration>
+                                <doclint>none</d

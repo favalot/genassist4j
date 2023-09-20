@@ -232,4 +232,6 @@
                     <version>${maven-gpg-plugin.version}</version>
                     <executions>
                         <execution>
+                            <id>sign-artifacts</id>
+                            <goals>
               

@@ -234,4 +234,6 @@
                         <execution>
                             <id>sign-artifacts</id>
                             <goals>
-              
+                                <goal>sign</goal>
+                            </goals>
+                         

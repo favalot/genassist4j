@@ -238,4 +238,5 @@
                             </goals>
                             <phase>verify</phase>
                             <configuration>
-                       
+                                <!-- Prevent gpg from using pinentry programs -->
+                 

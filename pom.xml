@@ -242,4 +242,7 @@
                                 <gpgArguments>
                                     <arg>--pinentry-mode</arg>
                                     <arg>loopback</arg>
-                                </gp
+                                </gpgArguments>
+                            </configuration>
+                        </execution>
+ 

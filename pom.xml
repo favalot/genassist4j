@@ -253,4 +253,5 @@
                     <version>${maven-deploy-plugin.version}</version>
                 </plugin>
                 <plugin>
-                    <groupId>org.code
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>versions-maven-plugin</artifactId>

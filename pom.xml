@@ -283,4 +283,9 @@
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
-                <art
+                <artifactId>maven-deploy-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+ 

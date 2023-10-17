@@ -305,4 +305,5 @@
     </developers>
 
     <scm>
-        <connection>scm:git@github.com
+        <connection>scm:git@github.com:HamaWhiteGG/autogen4j.git</connection>
+        <developerConnection>scm:git@github.com:HamaWhiteG

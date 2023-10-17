@@ -300,4 +300,9 @@
     <developers>
         <developer>
             <name>HamaWhite</name>
-            <email>baisongxx@gmail.com</email
+            <email>baisongxx@gmail.com</email>
+        </developer>
+    </developers>
+
+    <scm>
+        <connection>scm:git@github.com

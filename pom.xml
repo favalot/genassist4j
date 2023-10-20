@@ -312,4 +312,8 @@
 
     <issueManagement>
         <system>Github Issue</system>
-        <url>https://github.c
+        <url>https://github.com/HamaWhiteGG/autogen4j/issues</url>
+    </issueManagement>
+
+    <distributionManagement>
+      

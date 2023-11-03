@@ -1,3 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 
-<profiles version="13
+<profiles version="13">
+    <profile kind="CodeFormatterProfile" name="'Autogen4j Current'" version="13">
+    

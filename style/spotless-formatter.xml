@@ -7,4 +7,6 @@
         <setting id="org.eclipse.jdt.core.compiler.codegen.targetPlatform" value="1.8"/>
         <setting id="org.eclipse.jdt.core.formatter.indent_empty_lines" value="false"/>
         <setting id="org.eclipse.jdt.core.formatter.tabulation.size" value="4"/>
-        <setting id="org.eclipse.jdt.core.formatter.lineSplit" value
+        <setting id="org.eclipse.jdt.core.formatter.lineSplit" value="120"/>
+        <setting id="org.eclipse.jdt.core.formatter.comment.line_length" value="120"/>
+        

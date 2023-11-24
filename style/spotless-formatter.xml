@@ -24,4 +24,5 @@
         <setting id="org.eclipse.jdt.core.formatter.insert_new_line_at_end_of_file_if_missing" value="do not insert"/>
 
         <setting id="org.eclipse.jdt.core.formatter.alignment_for_enum_constants" value="49"/>
-        <setting id="org.eclipse.jdt.core.formatter.alignment_for_arguments_in_method
+        <setting id="org.eclipse.jdt.core.formatter.alignment_for_arguments_in_method_invocation" value="16"/>
+        <setting id="org.eclipse.jdt.core.formatter.alignme

@@ -28,4 +28,4 @@
         <setting id="org.eclipse.jdt.core.formatter.alignment_for_selector_in_method_invocation" value="16"/>
         <setting id="org.eclipse.jdt.core.formatter.alignment_for_assignment" value="16"/>
         <setting id="org.eclipse.jdt.core.formatter.alignment_for_superinterfaces_in_type_declaration" value="16"/>
-        <setting id="org.e
+        <setting id="org.eclipse.jdt.core.formatter.alignment_for_binary_expression" value="16"/

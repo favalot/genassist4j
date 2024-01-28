@@ -3,4 +3,4 @@ Java adaptation of Microsoft's AutoGen, facilitating the creation of Next-Gen La
 
 ## 1. What is GenAssist4j?
 
-GenAssist4j is a framework that enables the development of LLM applications using multiple agents that can converse with each other to solve tasks. These agents are cust
+GenAssist4j is a framework that enables the development of LLM applications using multiple agents that can converse with each other to solve tasks. These agents are customizable, conversable and seamlessly allow human participation. The agents can operate in vario

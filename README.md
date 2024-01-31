@@ -10,4 +10,7 @@ The following example can be found in the [genassist4j-example](genassist4j-exam
 ## 2. Quickstart
 
 ### 2.1 Maven Repository
-Prerequisites for 
+Prerequisites for building:
+* Java 17 or later
+* Unix-like environment (Linux, Mac OS X are recommended)
+* Maven (

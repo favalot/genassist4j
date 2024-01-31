@@ -13,4 +13,7 @@ The following example can be found in the [genassist4j-example](genassist4j-exam
 Prerequisites for building:
 * Java 17 or later
 * Unix-like environment (Linux, Mac OS X are recommended)
-* Maven (
+* Maven (version 3.8.6 recommended, requires at least 3.5.4)
+
+### 2.2 Environment Setup
+Using GenAssi

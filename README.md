@@ -16,4 +16,6 @@ Prerequisites for building:
 * Maven (version 3.8.6 recommended, requires at least 3.5.4)
 
 ### 2.2 Environment Setup
-Using GenAssi
+Using GenAssist4j requires OpenAI's APIs, you'll need to set the environment variable.
+
+## 3. Multi-Ag

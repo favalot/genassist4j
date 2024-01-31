@@ -18,4 +18,6 @@ Prerequisites for building:
 ### 2.2 Environment Setup
 Using GenAssist4j requires OpenAI's APIs, you'll need to set the environment variable.
 
-## 3. Multi-Ag
+## 3. Multi-Agent Conversation Framework
+
+GenAssist4j enables the next-gen LLM applications with 

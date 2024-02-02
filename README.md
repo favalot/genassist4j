@@ -22,4 +22,4 @@ Using GenAssist4j requires OpenAI's APIs, you'll need to set the environment var
 
 GenAssist4j enables the next-gen LLM applications with a generic multi-agent conversation framework. Features of this use case include:
 
-- **Multi-
+- **Multi-agent conversations**: GenAssist4j agents can communicate with each other to solve tasks. 

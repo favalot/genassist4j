@@ -24,4 +24,6 @@ GenAssist4j enables the next-gen LLM applications with a generic multi-agent con
 
 - **Multi-agent conversations**: GenAssist4j agents can communicate with each other to solve tasks. 
 - **Customization**: GenAssist4j agents can be customized to meet specific application needs.
-- **Human particip
+- **Human participation**: GenAssist4j seamlessly allows human participation. 
+
+### 3.1 Auto Feedback From Code E

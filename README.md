@@ -27,4 +27,6 @@ GenAssist4j enables the next-gen LLM applications with a generic multi-agent con
 - **Human participation**: GenAssist4j seamlessly allows human participation. 
 
 ### 3.1 Auto Feedback From Code Execution Example
-[Auto Feedback From Code Execution Example](genassist4j-example/src/main/jav
+[Auto Feedback From Code Execution Example](genassist4j-example/src/main/java/com/favalot/genassist4j/example/AutoFeedbackFromCodeExecutionExample.java)
+
+#

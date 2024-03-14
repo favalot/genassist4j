@@ -30,4 +30,6 @@ GenAssist4j enables the next-gen LLM applications with a generic multi-agent con
 [Auto Feedback From Code Execution Example](genassist4j-example/src/main/java/com/favalot/genassist4j/example/AutoFeedbackFromCodeExecutionExample.java)
 
 ### 3.2 Group Chat Example
-[Group Chat Example](genassist4j-example/src/main/java/com/
+[Group Chat Example](genassist4j-example/src/main/java/com/favalot/genassist4j/example/GroupChatExample.java)
+
+After running, you can check the file [group_c

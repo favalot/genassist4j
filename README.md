@@ -35,4 +35,6 @@ GenAssist4j enables the next-gen LLM applications with a generic multi-agent con
 After running, you can check the file [group_chat_output.log](data/group_chat/group_chat_output.log) for the output logs.
 
 
-## 4. Run Tes
+## 4. Run Test Cases from Source
+
+This project uses Spotless to format code. If you make any mo

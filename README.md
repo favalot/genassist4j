@@ -37,4 +37,7 @@ After running, you can check the file [group_chat_output.log](data/group_chat/gr
 
 ## 4. Run Test Cases from Source
 
-This project uses Spotless to format code. If you make any mo
+This project uses Spotless to format code. If you make any modifications, please remember to format the code.
+
+## 5. Support
+Don’t hesitate to ask! [Open an is

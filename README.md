@@ -40,4 +40,4 @@ After running, you can check the file [group_chat_output.log](data/group_chat/gr
 This project uses Spotless to format code. If you make any modifications, please remember to format the code.
 
 ## 5. Support
-Don’t hesitate to ask! [Open an is
+Don’t hesitate to ask! [Open an issue](https://github.com/favalot/genassist4j/issues) if you find a bug or need any help.
